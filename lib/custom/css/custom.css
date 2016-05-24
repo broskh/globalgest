@@ -103,3 +103,26 @@ div.main_feature .divider
 	max-width: 255px;
 	max-height: 155px;
 }
+
+button, input, optgroup, select, textarea
+{
+	color: #333;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #CCC !important;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #CCC !important;
+   	opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #CCC !important;
+   	opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #CCC !important;
+}

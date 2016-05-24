@@ -55,10 +55,10 @@ HTML;
  	addContentTitle($container, ["CHI ", "SIAMO"], "");
  	
 //  	aggiungo il contenuto
- 	$row = $container->ownerDocument->createElement ("div");
-	$row->setAttribute ("class", "row");
+ 	$row1 = $container->ownerDocument->createElement ("div");
+	$row1->setAttribute ("class", "row");
 	
-	$main_feature = $row->ownerDocument->createElement ("div");
+	$main_feature = $row1->ownerDocument->createElement ("div");
 	$main_feature->setAttribute ("class", "main_feature");
 	
 	$col1 = $main_feature->ownerDocument->createElement ("div");
@@ -128,8 +128,8 @@ HTML;
 	$col6->appendChild ($par7);
 
 	$main_feature->appendChild ($col6); 	
- 	$row->appendChild ($main_feature);
- 	$container->appendChild ($row);
+ 	$row1->appendChild ($main_feature);
+ 	$container->appendChild ($row1);
  	$about_us->appendChild ($container);
  	
 //  	<<--CERTIFICAZIONI
