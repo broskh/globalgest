@@ -17,11 +17,29 @@ jQuery('#send_button').click(function(){
 		    	var error = jQuery(xml).find('error').text();
                 if (error === "true")
                 {
-                	alert ("Mail non inviata correttamente.");
+                	BootstrapDialog.show({
+                        title: 'ATTENZIONE',
+                        message: 'Mail non inviata correttamente.',
+                        buttons: [{
+                        	label: 'OK',
+                            action: function(dialog) {
+                            			dialog.close();
+                            		}
+                        }]
+                    });
                 }
                 else
                 {
-                	alert ("Mail inviata correttamente.");
+                	BootstrapDialog.show({
+                        title: 'ATTENZIONE',
+                        message: 'Mail inviata correttamente.',
+                        buttons: [{
+                            label: 'OK',
+                            action: function(dialog) {
+                            			dialog.close();
+                            		}
+                        }]
+                    });
                 	jQuery("#name").val("");
                 	jQuery("#mail").val("");
                 	jQuery("#phone").val("");
@@ -30,7 +48,16 @@ jQuery('#send_button').click(function(){
 		    },
 		    error: function ()
 		    {
-		    	alert ("Errore durante la connessione al server.");
+		    	BootstrapDialog.show({
+                    title: 'ATTENZIONE',
+                    message: 'Errore durante la connessione al server.',
+                    buttons: [{
+                    	label: 'OK',
+                        action: function(dialog) {
+                        			dialog.close();
+                        		}
+                    }]
+                });
 		    } 
 		});
 });

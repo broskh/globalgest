@@ -90,11 +90,11 @@ HTML;
 	$col4 = $contact_full->ownerDocument->createElement ("div");
 	$col4->setAttribute ("class", "col-md-12 text-center");
 	
-	$button = $col4->ownerDocument->createElement ("button", "Invia");
-	$button->setAttribute ("class", "btn btn-main featured");
-	$button->setAttribute ("id", "send_button");
+	$button_x = $col4->ownerDocument->createElement ("button", "Invia");
+	$button_x->setAttribute ("class", "btn btn-main featured");
+	$button_x->setAttribute ("id", "send_button");
 	
-	$col4->appendChild ($button);
+	$col4->appendChild ($button_x);
 	$contact_full->appendChild ($col4);
 	$row2->appendChild ($contact_full);
 	$container->appendChild ($row2);
@@ -105,6 +105,54 @@ HTML;
 //  	<------------------------------------------------------>
  	addFooter($body);	//aggiungo il footer
  	addBackToTopButton($body);	//aggiungo il bottone che riporta all'inizio della pagina
+ 	
+//		<--inizio creazione dialog
+
+ 	$modal = $body->ownerDocument->createElement ("div");
+ 	$modal->setAttribute ("class", "modal fade");
+ 	
+ 	$modal_dialog = $modal->ownerDocument->createElement ("div");
+ 	$modal_dialog->setAttribute ("class", "modal-dialog");
+ 	
+ 	$modal_content = $modal_dialog->ownerDocument->createElement ("div");
+ 	$modal_content->setAttribute ("class", "modal-content");
+ 	
+ 	$modal_header = $modal_content->ownerDocument->createElement ("div");
+ 	$modal_header->setAttribute ("class", "modal-header");
+ 	
+ 	$button_x = $modal_header->ownerDocument->createElement ("button", "x");
+ 	$button_x->setAttribute ("type", "button");
+ 	$button_x->setAttribute ("class", "close");
+ 	$button_x->setAttribute ("data-dismiss", "modal");
+ 	$button_x->setAttribute ("aria-hidden", "true");
+ 	$modal_header->appendChild ($button_x);
+ 	
+ 	$h4 = $modal_header->ownerDocument->createElement ("h4", "Modal title");
+ 	$h4->setAttribute ("class", "modal-title");
+ 	$modal_header->appendChild ($h4);
+ 	$modal_content->appendChild ($modal_header);
+ 	
+ 	$modal_body = $modal_content->ownerDocument->createElement ("div");
+ 	$modal_body->setAttribute ("class", "modal-body");
+ 	
+ 	$modal_body->appendChild ($modal_body->ownerDocument->createElement ("p", "One fine body..."));
+ 	$modal_content->appendChild ($modal_body);
+ 	
+ 	$modal_footer = $modal_content->ownerDocument->createElement ("div");
+ 	$modal_footer->setAttribute ("class", "modal-footer");
+ 	
+ 	$button_close = $modal_footer->ownerDocument->createElement ("button", "Close");
+ 	$button_close->setAttribute ("type", "button");
+ 	$button_close->setAttribute ("class", "btn btn-default");
+ 	$button_close->setAttribute ("data-dismiss", "modal");
+ 	
+ 	$modal_footer->appendChild ($button_close);
+ 	$modal_content->appendChild ($modal_footer);
+ 	$modal_dialog->appendChild ($modal_content);
+ 	$modal->appendChild ($modal_dialog);
+ 	$body->appendChild ($modal);
+//		fine creazione dialog-->
+ 	
 	importJS($body);	//importo le librerie Javascript
 	addSimpleJS($body, "contact_us.js");
 	echo $dom->saveHTML();	//stampo tutto l'html

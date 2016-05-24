@@ -21,8 +21,8 @@
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo a con class e href passati per parametro.
-	 * Il parametro $content è il contenuto del nodo.
-	 * Se $class è nullo, il nodo a non avrà class
+	 * Il parametro $content ï¿½ il contenuto del nodo.
+	 * Se $class ï¿½ nullo, il nodo a non avrï¿½ class
 	 */
 	function addSimpleA (&$father, $content, $href, $class)
 	{
@@ -59,8 +59,8 @@
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo li contenente un nodo a con class e href passati per parametro.
-	 * Il parametro $content è il contenuto del nodo.
-	 * Se $class è nullo, il nodo a non avrà class
+	 * Il parametro $content ï¿½ il contenuto del nodo.
+	 * Se $class ï¿½ nullo, il nodo a non avrï¿½ class
 	 */
 	function addSimpleLi (&$father, $content, $href, $class)
 	{
@@ -154,7 +154,7 @@
 		$ul = $li_dropdown->ownerDocument->createElement ("ul");
 		$ul->setAttribute ("class", "dropdown-menu");
 	
-		if (!is_array($subVoices [0]))	//se è stata passata come parametro solo una sottovoce
+		if (!is_array($subVoices [0]))	//se ï¿½ stata passata come parametro solo una sottovoce
 		{
 			addMenuVoice($ul, $subVoices [0], $subVoices [1]);
 		}
@@ -199,6 +199,8 @@
 		$jquery_fancybox->setAttribute ("type", "text/css");
 		$jquery_fancybox->setAttribute ("media", "screen");
 		$head->appendChild($jquery_fancybox);
+        
+		addSimpleCSS ($head, dir_lib . "/bootstrap3-dialog/css/bootstrap-dialog.css");
 		
        	addSimpleCSS ($head, dir_lib . "/custom/css/custom.css");
 
@@ -243,6 +245,8 @@
         
         addSimpleJS($body, dir_lib . "/gmaps/gmaps.js");
         
+        addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");
+        
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
         
         addSimpleJS($body, dir_lib . "/gmaps/myLocation.js");
@@ -256,7 +260,7 @@
 	 */
 	function addHorizontalNavbar (&$body)
 	{
-		//creazione dell'array per il sottomenu servizi che mi servirà dopo
+		//creazione dell'array per il sottomenu servizi che mi servirï¿½ dopo
 		$voci_servizi = array (
 				array ("Progettazione", dir_progettazione),
 				array ("Impianti elettrici", dir_imp_elettrici),
@@ -635,7 +639,7 @@
 
     /*
      * Funzione che genera il DOM html, inserisce le informazioni nell'head, e lo ritorna.
-     * Il parametro title è la stringa che sarà inserita nella tag omonima.
+     * Il parametro title ï¿½ la stringa che sarï¿½ inserita nella tag omonima.
      */
 	function open_html($title) { // apre la pagina con il relativo titolo
 		//creo il documento
@@ -956,12 +960,12 @@
 	/*
 	 * Funzione che appende un nodo titolo per il contenuto della pagina al nodo 
 	 * $father passato come parametro.
-	 * $title 		può essere una stringa o un array di stringhe. Se è una stringa sarà inserita
-	 * 				come titolo semplice. Se è un array di stringhe (composto da due stringhe),
-	 * 				la prima stringa stringa verrà inserita come titolo semplice, mentre la seconda
-	 * 				sarà inserito come titolo in grassetto dopo al titolo semplice.
-	 * $subtitle	può essere una stringa o un nodo "h4". Se è una stringa viene inserita 
-	 * 				semplicemente come sottotitolo, mentre se è un nodo, verrà aggiunto quel nodo
+	 * $title 		puï¿½ essere una stringa o un array di stringhe. Se ï¿½ una stringa sarï¿½ inserita
+	 * 				come titolo semplice. Se ï¿½ un array di stringhe (composto da due stringhe),
+	 * 				la prima stringa stringa verrï¿½ inserita come titolo semplice, mentre la seconda
+	 * 				sarï¿½ inserito come titolo in grassetto dopo al titolo semplice.
+	 * $subtitle	puï¿½ essere una stringa o un nodo "h4". Se ï¿½ una stringa viene inserita 
+	 * 				semplicemente come sottotitolo, mentre se ï¿½ un nodo, verrï¿½ aggiunto quel nodo
 	 * 				come sottotitolo.
 	 */
 	function addContentTitle (&$father, $title, $subtitle)
