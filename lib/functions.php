@@ -80,6 +80,38 @@
 		$meta->setAttribute ("content", $content);
 		$father->appendChild($meta);
 	}
+	
+	/*
+	 * Funzione che appende al padre passato come parametro (si presume sia un form), un campo costruito
+	 * sulla base delle altre informazioni passate per parametro.
+	 * $father		e' il nodo al quale verra' appeso il sottomenu'
+	 * $name		value of the attribute "name" of the input node.
+	 * $placeholder	value of the attribute "placeholder" of the input node.
+	 * $id			value of the attribute "id" of the input node.
+	 * $type		value of the attribute "type" of the input node.
+	 * $fa_icon		font awesome icon shown into the form field.
+	 */
+	function addFormField (&$father, $name, $placeholder, $id, $type, $fa_icon)
+	{
+		$form_level = $father->ownerDocument->createElement ("div");
+		$form_level->setAttribute ("class", "form-level");
+		
+		$input = $form_level->ownerDocument->createElement ("input");
+		$input->setAttribute ("id", $id);
+		$input->setAttribute ("class", "input-block");
+		$input->setAttribute ("name", $name);
+		$input->setAttribute ("placeholder", $placeholder);
+		$input->setAttribute ("value", "");
+		$input->setAttribute ("type", $type);
+		
+		$form_level->appendChild ($input);
+		
+		$icon = $form_level->ownerDocument->createElement ("span");
+		$icon->setAttribute ("class", "form-icon fa " . $fa_icon);
+		
+		$form_level->appendChild ($icon);
+		$father->appendChild ($form_level);
+	}
 
 	/*
 	 * Funzione derivata direttamente da "addSimpleLi".
@@ -742,7 +774,6 @@
 		
 		$third_ul = $third_footerMenu->ownerDocument->createElement ("ul");
 		
-		addSimpleLi($third_ul, "Certificazioni", "#", "");
 		addSimpleLi($third_ul, "Sistemi di pulizia per pannelli fotovoltaici", "#", "");
 		addSimpleLi($third_ul, "Privacy Policy", "#", "");
 		
