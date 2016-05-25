@@ -1,4 +1,17 @@
 /**
+ * Inizializzazione della dialog
+ */
+var dialog = new BootstrapDialog ({
+                    title: 'Notifica di invio',
+                    buttons: [{
+                    	label: 'OK',
+                        action: function(dialog) {
+                        			dialog.close();
+                        		}
+                    }]
+                });
+
+/**
  * Script per passare le informazioni necessarie all'apposita pagina php tramite ajax.
  */
 jQuery('#send_button').click(function(){
@@ -8,56 +21,39 @@ jQuery('#send_button').click(function(){
 		    telephone: jQuery("#phone").val(),
 		    message: jQuery("#message").val()
 		};
-		jQuery.ajax({
-		    type: "POST",
-		    url: "mail.php",
-		    data: data,
-		    success: function (xml)
-		    {
-		    	var error = jQuery(xml).find('error').text();
-                if (error === "true")
-                {
-                	BootstrapDialog.show({
-                        title: 'ATTENZIONE',
-                        message: 'Mail non inviata correttamente.',
-                        buttons: [{
-                        	label: 'OK',
-                            action: function(dialog) {
-                            			dialog.close();
-                            		}
-                        }]
-                    });
-                }
-                else
-                {
-                	BootstrapDialog.show({
-                        title: 'ATTENZIONE',
-                        message: 'Mail inviata correttamente.',
-                        buttons: [{
-                            label: 'OK',
-                            action: function(dialog) {
-                            			dialog.close();
-                            		}
-                        }]
-                    });
-                	jQuery("#name").val("");
-                	jQuery("#mail").val("");
-                	jQuery("#phone").val("");
-                	jQuery("#message").val("");
-                }
-		    },
-		    error: function ()
-		    {
-		    	BootstrapDialog.show({
-                    title: 'ATTENZIONE',
-                    message: 'Errore durante la connessione al server.',
-                    buttons: [{
-                    	label: 'OK',
-                        action: function(dialog) {
-                        			dialog.close();
-                        		}
-                    }]
-                });
-		    } 
-		});
+	jQuery.ajax({
+	    type: "POST",
+	    url: "mail.php",
+	    data: data,
+	    success: function (xml)
+	    {
+	    	var error = jQuery(xml).find('error').text();
+            if (error === "true")
+            {
+            	dialog.realize ();
+            	dialog.getModalHeader ().css ('background-color', 'red');
+                dialog.setMessage('Mail non inviata correttamente.');
+            	dialog.open ();
+            }
+            else
+            {
+            	dialog.realize ();
+            	dialog.getModalHeader ().css ('background-color', 'red');
+                dialog.setMessage('Mail inviata correttamente.');
+            	dialog.open ();
+            	
+            	jQuery("#name").val("");
+            	jQuery("#mail").val("");
+            	jQuery("#phone").val("");
+            	jQuery("#message").val("");
+            }
+	    },
+	    error: function ()
+	    {
+        	dialog.realize ();
+        	dialog.getModalHeader ().css ('background-color', 'red');
+            dialog.setMessage('Errore durante la connessione al server.');
+        	dialog.open ();
+	    } 
+	});
 });
