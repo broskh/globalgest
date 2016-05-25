@@ -138,3 +138,11 @@ iframe.map
 {
 	margin-top: 25px;
 }
+
+@media (max-width: 991px) and (min-width: 768px)
+{
+	.navbar-header
+	{
+	    width: auto;
+	}
+}
