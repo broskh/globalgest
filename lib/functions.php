@@ -204,7 +204,7 @@
 		
        	addSimpleCSS ($head, dir_lib . "/custom/css/custom.css");
 
-        addSimpleJS($head, "http://maps.google.com/maps/api/js?sensor=false");
+//         addSimpleJS($head, "http://maps.google.com/maps/api/js?sensor=false");
         
         addSimpleCSS ($head, "http://fonts.googleapis.com/css?family=Lato:400,300");
         
@@ -243,13 +243,13 @@
         
         addSimpleJS($body, dir_lib . "/wow/wow.min.js");
         
-        addSimpleJS($body, dir_lib . "/gmaps/gmaps.js");
-        
         addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");
         
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
         
-        addSimpleJS($body, dir_lib . "/gmaps/myLocation.js");
+//         addSimpleJS($body, dir_lib . "/gmaps/gmaps.js");
+        
+//         addSimpleJS($body, dir_lib . "/gmaps/myLocation.js");
 
         addSimpleJS($body, dir_lib . "/custom/js/custom.js");
     }

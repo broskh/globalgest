@@ -154,6 +154,6 @@ HTML;
 //		fine creazione dialog-->
  	
 	importJS($body);	//importo le librerie Javascript
-	addSimpleJS($body, "contact_us.js");
+	addSimpleJS($body, "contact_us.js");	//importo uno script javascript personalizzato epr questa pagina (utilizzo di ajax)
 	echo $dom->saveHTML();	//stampo tutto l'html
 ?>

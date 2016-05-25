@@ -126,3 +126,15 @@ button, input, optgroup, select, textarea
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
 	color: #CCC !important;
 }
+
+iframe.map
+{
+	min-height: 500px;
+	width: 100%;
+	border: 0;
+}
+
+.margin-top-25
+{
+	margin-top: 25px;
+}
