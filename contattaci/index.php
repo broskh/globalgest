@@ -48,24 +48,23 @@ HTML;
 	$contact_full = $row2->ownerDocument->createElement ("div");
 	$contact_full->setAttribute ("class", "contact_full");
 	
-	$col2 = $contact_full->ownerDocument->createElement ("div");
+	$form = $contact_full->ownerDocument->createElement ("form");
+	$form->setAttribute ("action", "role");
+	
+	$col2 = $form->ownerDocument->createElement ("div");
 	$col2->setAttribute ("class", "col-md-6 left");
 	
 	$left_contact = $col2->ownerDocument->createElement ("div");
 	$left_contact->setAttribute ("class", "left_contact");
 	
-	$form = $left_contact->ownerDocument->createElement ("form");
-	$form->setAttribute ("action", "role");
+	addFormField($left_contact, "name", "Nome", "name", "text", "fa-user");
+	addFormField($left_contact, "email", "E-mail", "email", "email", "fa-envelope-o");
+	addFormField($left_contact, "phone", "Telefono", "phone", "text", "fa-phone");
 	
-	addFormField($form, "name", "Nome", "name", "text", "fa-user");
-	addFormField($form, "email", "E-mail", "email", "email", "fa-envelope-o");
-	addFormField($form, "phone", "Telefono", "phone", "text", "fa-phone");
-	
-	$left_contact->appendChild ($form);
 	$col2->appendChild ($left_contact);
-	$contact_full->appendChild ($col2);
+	$form->appendChild ($col2);
 	
-	$col3 = $contact_full->ownerDocument->createElement ("div");
+	$col3 = $form->ownerDocument->createElement ("div");
 	$col3->setAttribute ("class", "col-md-6 right");
 	
 	$form_level = $col3->ownerDocument->createElement ("div");
@@ -85,9 +84,9 @@ HTML;
 	
 	$form_level->appendChild ($message_icon);
 	$col3->appendChild ($form_level);
-	$contact_full->appendChild ($col3);
+	$form->appendChild ($col3);
 	
-	$col4 = $contact_full->ownerDocument->createElement ("div");
+	$col4 = $form->ownerDocument->createElement ("div");
 	$col4->setAttribute ("class", "col-md-12 text-center");
 	
 	$button_x = $col4->ownerDocument->createElement ("button", "Invia");
@@ -95,7 +94,8 @@ HTML;
 	$button_x->setAttribute ("id", "send_button");
 	
 	$col4->appendChild ($button_x);
-	$contact_full->appendChild ($col4);
+	$form->appendChild ($col4);
+	$contact_full->appendChild ($form);
 	$row2->appendChild ($contact_full);
 	$container->appendChild ($row2);
  	$contact_us->appendChild ($container);
