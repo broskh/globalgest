@@ -1,10 +1,11 @@
 <?php
+	include_once '../lib/functions.php';	//Includo la mia libreria PHP
 	$name = $_POST ["name"];
 	$email = $_POST ["email"];
 	$telephone = $_POST ["telephone"];
 	$message = $_POST ["message"];
 	
-	$to = "a.scheri@globalgest.mo.it";
+	$to = email;
 	$subject = "MAIL FROM WEBSITE www.globalgest.mo.it";
 	$message = wordwrap($message,70);
 	$headers = "From: $email" . "\r\n" .

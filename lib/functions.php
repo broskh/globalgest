@@ -18,6 +18,17 @@
 	define ( "dir_contattaci", dir_prj_root . "/contattaci" ); //costante che contiene il percorso alla cartella "contattaci"
 	define ( "dir_dove_siamo", dir_prj_root . "/dove-siamo" ); //costante che contiene il percorso alla cartella "dove-siamo"
 	
+	define ( "ragione_sociale", "GLOBAL GEST S.R.L." ); //ragione sociale
+	define ( "via", "Via della Meccanica" ); //via sede
+	define ( "n_civico", "16/18" ); //numero civico sede
+	define ( "citta", "San Cesario sul Panaro" ); //citt sede
+	define ( "provincia_abbr", "(MO)" ); //provincia abbreviata sede
+	define ( "provincia_int", "Modena" ); //provincia integrale sede
+	define ( "cap", "41018" ); //cap sede
+	define ( "paese", "Italy" ); //paese sede
+	define ( "tel", "+39 059 9537400" ); //telefono sede
+	define ( "fax", "+39 059 9537496" ); //fax sede
+	define ( "email", "info@globalgest.mo.it" ); //indirizzo mail per info
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo a con class e href passati per parametro.
@@ -802,13 +813,13 @@
 		$i_address = $li_address->ownerDocument->createElement ("i");
 		$i_address->setAttribute ("class", "fa fa-map-marker");
 		$li_address->appendChild ($i_address);
-		$span_address1 = $li_address->ownerDocument->createElement ("span", "Via della Meccanica 16/18");
+		$span_address1 = $li_address->ownerDocument->createElement ("span", via . ", " . n_civico);
 		$li_address->appendChild ($span_address1);
 		addBR($li_address);
-		$span_address2 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;San Cesario sul Panaro (MO), 41018");
+		$span_address2 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . citta . " " . provincia_abbr . ", " . cap);
 		$li_address->appendChild ($span_address2);
 		addBR($li_address);
-		$span_address3 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Italy");
+		$span_address3 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . paese);
 		$li_address->appendChild ($span_address3);
 		$fourth_ul->appendChild ($li_address);
 		
@@ -816,25 +827,25 @@
 		$i_phone = $li_phone->ownerDocument->createElement ("i");
 		$i_phone->setAttribute ("class", "fa fa-phone");
 		$li_phone->appendChild ($i_phone);
-		$span_phone = $li_phone->ownerDocument->createElement ("span", "+39 059 9537400");
+		$span_phone = $li_phone->ownerDocument->createElement ("span", "&nbsp;" . tel);
 		$li_phone->appendChild ($span_phone);
 		$fourth_ul->appendChild ($li_phone);
+		
+		$li_fax = $fourth_ul->ownerDocument->createElement ("li");
+		$i_fax = $li_fax->ownerDocument->createElement ("i");
+		$i_fax->setAttribute ("class", "fa fa-fax");
+		$li_fax->appendChild ($i_fax);
+		$span_fax = $li_fax->ownerDocument->createElement ("span", "&nbsp;" . fax);
+		$li_fax->appendChild ($span_fax);
+		$fourth_ul->appendChild ($li_fax);
 		
 		$li_mail = $fourth_ul->ownerDocument->createElement ("li");
 		$i_mail = $li_mail->ownerDocument->createElement ("i");
 		$i_mail->setAttribute ("class", "fa fa-envelope");
 		$li_mail->appendChild ($i_mail);
-		$span_mail = $li_mail->ownerDocument->createElement ("span", "c.scheri@globalgest.mo.it");
+		$span_mail = $li_mail->ownerDocument->createElement ("span", "&nbsp;" . email);
 		$li_mail->appendChild ($span_mail);
 		$fourth_ul->appendChild ($li_mail);
-		
-		$li_website = $fourth_ul->ownerDocument->createElement ("li");
-		$i_website = $li_website->ownerDocument->createElement ("i");
-		$i_website->setAttribute ("class", "fa fa-globe");
-		$li_website->appendChild ($i_website);
-		$span_website = $li_website->ownerDocument->createElement ("span", " www.globalgest.mo.it");
-		$li_website->appendChild ($span_website);
-		$fourth_ul->appendChild ($li_website);
 		
 		$fourth_footerMenu->appendChild ($fourth_ul);
 		$fourth_col->appendChild ($fourth_footerMenu);
@@ -882,7 +893,7 @@
 		
 		$copyright_p = $copyright_div->ownerDocument->createElement ("p", " &copy; Copyright reserved to ");
 		$copyright_p->setAttribute ("class", "text-block");
-		$copyright_p->appendChild ($copyright_p->ownerDocument->createElement("span", "Global Gest S.R.L."));
+		$copyright_p->appendChild ($copyright_p->ownerDocument->createElement("span", ragione_sociale));
 		
 		$copyright_div->appendChild ($copyright_p);
 		$first_bot_col->appendChild ($copyright_div);

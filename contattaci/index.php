@@ -58,7 +58,7 @@ HTML;
 	$form->setAttribute ("action", "role");
 	
 	addFormField($form, "name", "Nome", "name", "text", "fa-user");
-	addFormField($form, "email", "E-mail", "mail", "email", "fa-envelope-o");
+	addFormField($form, "email", "E-mail", "email", "email", "fa-envelope-o");
 	addFormField($form, "phone", "Telefono", "phone", "text", "fa-phone");
 	
 	$left_contact->appendChild ($form);

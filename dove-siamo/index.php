@@ -10,7 +10,7 @@
  	
 //		<--variabili contenenti il testo da inserire nei paragrafi
  	$par1_text = <<<HTML
- 	Ecco dove potete trovarci:
+ 	Potete trovarci qui:
 HTML;
 // 		fine variabili di testo-->
  	
@@ -67,24 +67,35 @@ HTML;
 	
 	$address = $col3->ownerDocument->createElement ("div");
 	
-	$information = $address->ownerDocument->createElement ("p");
-	$strong_name = $information->ownerDocument->createElement ("span");
-	$strong_name->appendChild ($strong_name->ownerDocument->createElement ("strong", "GLOBAL GEST S.R.L."));
-	$information->appendChild($strong_name);	
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "Via della Meccanica 16/18"));
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "San Cesario sul Panaro (MO), 41018"));
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "Italy"));
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "tel: +39 059 9537400"));
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "fax: +39 059 9537496"));
-	addBR($information);
-	$information->appendChild($information->ownerDocument->createElement ("span", "e-mail: c.scheri@globalgest.mo.it"));
+	$information1 = $address->ownerDocument->createElement ("p");
+	$strong_name = $information1->ownerDocument->createElement ("span");
+	$strong_name->appendChild ($strong_name->ownerDocument->createElement ("strong", ragione_sociale));
+	$information1->appendChild($strong_name);	
+	addBR($information1);
+	$information1->appendChild($information1->ownerDocument->createElement ("span", via . ", " . n_civico));
+	addBR($information1);
+	$information1->appendChild($information1->ownerDocument->createElement ("span", citta . " " . provincia_abbr . ", " . cap));
+	addBR($information1);
+	$information1->appendChild($information1->ownerDocument->createElement ("span", paese));
+	$address->appendChild ($information1);
 	
-	$address->appendChild ($information);
+	$information2 = $address->ownerDocument->createElement ("p");
+	$i_tel = $information2->ownerDocument->createElement ("i");
+	$i_tel->setAttribute ("class", "fa fa-phone");
+	$information2->appendChild ($i_tel);
+	$information2->appendChild($information2->ownerDocument->createElement ("span", "&nbsp;&nbsp;tel: " . tel));
+	addBR($information2);
+	$i_fax = $information2->ownerDocument->createElement ("i");
+	$i_fax->setAttribute ("class", "fa fa-fax");
+	$information2->appendChild ($i_fax);
+	$information2->appendChild($information2->ownerDocument->createElement ("span", "&nbsp;&nbsp;fax: " . fax));
+	addBR($information2);
+	$i_mail = $information2->ownerDocument->createElement ("i");
+	$i_mail->setAttribute ("class", "fa fa-envelope");
+	$information2->appendChild ($i_mail);
+	$information2->appendChild($information2->ownerDocument->createElement ("span", "&nbsp;&nbsp;e-mail: " . email));
+	$address->appendChild ($information2);
+	
 	$col3->appendChild ($address);
 	$gmap->appendChild ($col3);
 	$row2->appendChild ($gmap);
