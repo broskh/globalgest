@@ -1080,12 +1080,12 @@
 		$feature_content->appendChild ($icon);
 		
 		$feature_content->appendChild ($feature_content->ownerDocument->createElement ("h5", $title));
-		$feature_content->appendChild ($feature_content->ownerDocument->createElement ("p", $paragraph));
+		/*$feature_content->appendChild ($feature_content->ownerDocument->createElement ("p", $paragraph));
 		
 		$button = $feature_content->ownerDocument->createElement ("button", "Read More");
 		$button->setAttribute ("class", "btn btn-main");
 		
-		$feature_content->appendChild ($button);
+		$feature_content->appendChild ($button);*/
 		$col->appendChild ($feature_content);
 		$father->appendChild ($col);
 	}
