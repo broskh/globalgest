@@ -15,7 +15,8 @@ var dialog = new BootstrapDialog ({
  * Script per passare le informazioni necessarie all'apposita pagina php tramite ajax.
  */
 
-$('#form').validator().on('submit', function (e) {
+$('#contact_form').validator();
+$('#contact_form').on('submit', function (e) {
 	  if (e.isDefaultPrevented()) {
 	    // handle the invalid form...
 	  } else {

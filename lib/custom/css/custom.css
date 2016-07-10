@@ -1,4 +1,4 @@
-@CHARSET "ISO-8859-1";
+io te @CHARSET "ISO-8859-1";
 
 .navbar-brand img{
   	height: 200%;
@@ -145,4 +145,19 @@ iframe.map
 	{
 	    width: auto;
 	}
+}
+
+div.has-error > input.input-block, div.has-error > textarea.textarea-block
+{
+	border-color: #a94442!important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483!important;
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483!important;
+}
+input.input-block:hover, textarea.textarea-block:hover 
+{
+	border-color: #66afe9!important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
 }

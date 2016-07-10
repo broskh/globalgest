@@ -49,6 +49,7 @@ HTML;
 	$contact_full->setAttribute ("class", "contact_full");
 	
 	$form = $contact_full->ownerDocument->createElement ("form");
+	$form->setAttribute ("id", "contact_form");
 	$form->setAttribute ("action", "role");
 	
 	$col2 = $form->ownerDocument->createElement ("div");
@@ -57,9 +58,9 @@ HTML;
 	$left_contact = $col2->ownerDocument->createElement ("div");
 	$left_contact->setAttribute ("class", "left_contact");
 	
-	addFormField($left_contact, "name", "Nome", "name", "text", "fa-user");
-	addFormField($left_contact, "email", "E-mail", "email", "email", "fa-envelope-o");
-	addFormField($left_contact, "phone", "Telefono", "phone", "text", "fa-phone");
+	addFormField($left_contact, "name", "Nome*", "name", "text", "fa-user", true, "");
+	addFormField($left_contact, "email", "E-mail*", "email", "email", "fa-envelope-o", true, "L'indirizzo email non è valido");
+	addFormField($left_contact, "phone", "Telefono", "phone", "text", "fa-phone", false, "");
 	
 	$col2->appendChild ($left_contact);
 	$form->appendChild ($col2);
@@ -68,21 +69,25 @@ HTML;
 	$col3->setAttribute ("class", "col-md-6 right");
 	
 	$form_level = $col3->ownerDocument->createElement ("div");
-	$form_level->setAttribute ("class", "form-level");
+	$form_level->setAttribute ("class", "form-level form-group");
 	
 	$textarea = $form_level->ownerDocument->createElement ("textarea");
 	$textarea->setAttribute ("name", "");
 	$textarea->setAttribute ("id", "message");
-	$textarea->setAttribute ("placeholder", "Messaggio");
+	$textarea->setAttribute ("placeholder", "Messaggio*");
 	$textarea->setAttribute ("rows", "5");
 	$textarea->setAttribute ("class", "textarea-block");
+	$textarea->setAttribute ("required", "");
 	
 	$form_level->appendChild ($textarea);
 	
 	$message_icon = $form_level->ownerDocument->createElement ("span");
 	$message_icon->setAttribute ("class", "form-icon fa fa-pencil");
-	
 	$form_level->appendChild ($message_icon);
+	
+	$error_field = $form_level->ownerDocument->createElement ("div");
+	$error_field->setAttribute ("class", "help-block with-errors");
+	$form_level->appendChild ($error_field);
 	$col3->appendChild ($form_level);
 	$form->appendChild ($col3);
 	

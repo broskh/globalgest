@@ -101,11 +101,12 @@
 	 * $id			value of the attribute "id" of the input node.
 	 * $type		value of the attribute "type" of the input node.
 	 * $fa_icon		font awesome icon shown into the form field.
+	 * $required	boolean that indicates if the attribute "required" is necessary.
 	 */
-	function addFormField (&$father, $name, $placeholder, $id, $type, $fa_icon)
+	function addFormField (&$father, $name, $placeholder, $id, $type, $fa_icon, $required, $data_error)
 	{
 		$form_level = $father->ownerDocument->createElement ("div");
-		$form_level->setAttribute ("class", "form-level");
+		$form_level->setAttribute ("class", "form-level form-group");
 		
 		$input = $form_level->ownerDocument->createElement ("input");
 		$input->setAttribute ("id", $id);
@@ -114,13 +115,24 @@
 		$input->setAttribute ("placeholder", $placeholder);
 		$input->setAttribute ("value", "");
 		$input->setAttribute ("type", $type);
+		if ($data_error)
+		{
+			$input->setAttribute ("data-error", $data_error);
+		}
+		if ($required)
+		{
+		$input->setAttribute ("required", "");
+		}
 		
 		$form_level->appendChild ($input);
 		
 		$icon = $form_level->ownerDocument->createElement ("span");
 		$icon->setAttribute ("class", "form-icon fa " . $fa_icon);
-		
 		$form_level->appendChild ($icon);
+		
+		$error_field = $form_level->ownerDocument->createElement ("div");
+		$error_field->setAttribute ("class", "help-block with-errors");
+		$form_level->appendChild ($error_field);
 		$father->appendChild ($form_level);
 	}
 
@@ -257,6 +269,8 @@
         addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");
         
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
+        
+        addSimpleJS($body, dir_lib . "/jValidator/validator.js");
         
 //         addSimpleJS($body, dir_lib . "/gmaps/gmaps.js");
         
