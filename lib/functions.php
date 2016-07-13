@@ -59,6 +59,17 @@
 	}
 	
 	/*
+	 * Funzione che aggiunge al nodo padre un nodo contente semplicemente la tag "i" rappresentatante
+	 * l'icona Font Awesome passata come parametro attraverso la corrispondente classe.
+	 */
+	function addSimpleFAIcon (&$father, $class)
+	{
+		$i = $father->ownerDocument->createElement ("i");
+		$i->setAttribute ("class", $class);
+		$father->appendChild ($i);
+	}
+	
+	/*
 	 * Funzione che appende al nodo padre, passato per parametro, una semplice libreria Javascript
 	 */
 	function addSimpleJS (&$father, $path)
@@ -73,11 +84,16 @@
 	 * Il parametro $content � il contenuto del nodo.
 	 * Se $class � nullo, il nodo a non avr� class
 	 */
-	function addSimpleLi (&$father, $content, $href, $class)
+	function addSimpleLi (&$father, $content, $href, $a_class, $icon_class)
 	{
 		$li = $father->ownerDocument->createElement ("li");
 		
-		addSimpleA($li, $content, $href, $class);
+		if ($icon_class)
+		{
+			addSimpleFAIcon($li, $icon_class);
+		}
+		
+		addSimpleA($li, $content, $href, $a_class);
 		$father->appendChild ($li);
 	}
 	
@@ -142,7 +158,7 @@
 	 */
 	function addMenuVoice (&$father, $content, $href)
 	{
-		addSimpleLi($father, $content, $href, "page-scroll");
+		addSimpleLi($father, $content, $href, "page-scroll", "");
 	}
 	
 	/*
@@ -751,12 +767,12 @@
 		
 		$first_ul = $first_footerMenu->ownerDocument->createElement ("ul");
 
-		addSimpleLi($first_ul, "Home", dir_prj_root, "");
-		addSimpleLi($first_ul, "Chi siamo", dir_chi_siamo, "");
-		addSimpleLi($first_ul, "Servizi", dir_servizi, "");
-		addSimpleLi($first_ul, "Gallery", dir_gallery, "");
-		addSimpleLi($first_ul, "Dove siamo", dir_dove_siamo, "");
-		addSimpleLi($first_ul, "Contattaci", dir_contattaci, "");
+		addSimpleLi($first_ul, "Home", dir_prj_root, "", "");
+		addSimpleLi($first_ul, "Chi siamo", dir_chi_siamo, "", "");
+		addSimpleLi($first_ul, "Servizi", dir_servizi, "", "");
+		addSimpleLi($first_ul, "Gallery", dir_gallery, "", "");
+		addSimpleLi($first_ul, "Dove siamo", dir_dove_siamo, "", "");
+		addSimpleLi($first_ul, "Contattaci", dir_contattaci, "", "");
 		
 		$first_footerMenu->appendChild ($first_ul);	
 		$first_col->appendChild ($first_footerMenu);
@@ -775,16 +791,16 @@
 		
 		$second_ul = $second_footerMenu->ownerDocument->createElement ("ul");
 		
-		addSimpleLi($second_ul, "Progettazione", dir_progettazione, "");
-		addSimpleLi($second_ul, "Impianti elettrici", dir_imp_elettrici, "");
-		addSimpleLi($second_ul, "Impianti termo-sanitari", dir_imp_termo_san, "");
-		addSimpleLi($second_ul, "Impianti di climatizzazione", dir_imp_clima, "");
-		addSimpleLi($second_ul, "Impianti di protezione antincendio", dir_imp_prot_antincendio, "");
-		addSimpleLi($second_ul, "Impianti fotovoltaici", dir_imp_fotovoltaici, "");
-		addSimpleLi($second_ul, "Impianti per manifestazioni e fiere", dir_imp_manifest_fiere, "");
-		addSimpleLi($second_ul, "Opere edili", dir_opere_edili, "");
-		addSimpleLi($second_ul, "Manutenzioni programmate ed assistenza", dir_man_program_ass, "");
-		addSimpleLi($second_ul, "Analisi energetica", dir_analisi_energetica, "");
+		addSimpleLi($second_ul, "Progettazione", dir_progettazione, "", "");
+		addSimpleLi($second_ul, "Impianti elettrici", dir_imp_elettrici, "", "");
+		addSimpleLi($second_ul, "Impianti termo-sanitari", dir_imp_termo_san, "", "");
+		addSimpleLi($second_ul, "Impianti di climatizzazione", dir_imp_clima, "", "");
+		addSimpleLi($second_ul, "Impianti di protezione antincendio", dir_imp_prot_antincendio, "", "");
+		addSimpleLi($second_ul, "Impianti fotovoltaici", dir_imp_fotovoltaici, "", "");
+		addSimpleLi($second_ul, "Impianti per manifestazioni e fiere", dir_imp_manifest_fiere, "", "");
+		addSimpleLi($second_ul, "Opere edili", dir_opere_edili, "", "");
+		addSimpleLi($second_ul, "Manutenzioni programmate ed assistenza", dir_man_program_ass, "", "");
+		addSimpleLi($second_ul, "Analisi energetica", dir_analisi_energetica, "", "");
 		
 		$second_footerMenu->appendChild ($second_ul);
 		$second_col->appendChild ($second_footerMenu);
@@ -803,8 +819,8 @@
 		
 		$third_ul = $third_footerMenu->ownerDocument->createElement ("ul");
 		
-		addSimpleLi($third_ul, "Sistemi di pulizia per pannelli fotovoltaici", "#", "");
-		addSimpleLi($third_ul, "Privacy Policy", "#", "");
+		addSimpleLi($third_ul, "Sistemi di pulizia per pannelli fotovoltaici", "#", "", "");
+		addSimpleLi($third_ul, "Privacy Policy", "#", "", "");
 		
 		$third_footerMenu->appendChild ($third_ul);
 		$third_col->appendChild ($third_footerMenu);
@@ -824,42 +840,24 @@
 		$fourth_ul = $fourth_footerMenu->ownerDocument->createElement ("ul");
 		
 		$li_address = $fourth_ul->ownerDocument->createElement ("li");
-		$i_address = $li_address->ownerDocument->createElement ("i");
-		$i_address->setAttribute ("class", "fa fa-map-marker");
-		$li_address->appendChild ($i_address);
-		$span_address1 = $li_address->ownerDocument->createElement ("span", via . ", " . n_civico);
-		$li_address->appendChild ($span_address1);
-		addBR($li_address);
-		$span_address2 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . citta . " " . provincia_abbr . ", " . cap);
-		$li_address->appendChild ($span_address2);
-		addBR($li_address);
-		$span_address3 = $li_address->ownerDocument->createElement ("span", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . paese);
-		$li_address->appendChild ($span_address3);
+		addSimpleFAIcon($li_address, "fa fa-map-marker");
+		$a = $li_address->ownerDocument->createElement ("a");
+		$a->setAttribute ("href", "http://maps.google.com/?q=" . paese . ", " . citta . ", " . via . " " . n_civico . ", " . ragione_sociale);
+		$a->setAttribute ("class", "footer-link");
+		$a->setAttribute ("target", "_blank");
+		$a->appendChild($a->ownerDocument->createTextNode(via . ", " . n_civico));
+		addBR($a);
+		$a->appendChild($a->ownerDocument->createTextNode(citta . " " . provincia_abbr . ", " . cap));
+		addBR($a);
+		$a->appendChild($a->ownerDocument->createTextNode(paese));
+		$li_address->appendChild ($a);
 		$fourth_ul->appendChild ($li_address);
 		
-		$li_phone = $fourth_ul->ownerDocument->createElement ("li");
-		$i_phone = $li_phone->ownerDocument->createElement ("i");
-		$i_phone->setAttribute ("class", "fa fa-phone");
-		$li_phone->appendChild ($i_phone);
-		$span_phone = $li_phone->ownerDocument->createElement ("span", "&nbsp;" . tel);
-		$li_phone->appendChild ($span_phone);
-		$fourth_ul->appendChild ($li_phone);
-		
-		$li_fax = $fourth_ul->ownerDocument->createElement ("li");
-		$i_fax = $li_fax->ownerDocument->createElement ("i");
-		$i_fax->setAttribute ("class", "fa fa-fax");
-		$li_fax->appendChild ($i_fax);
-		$span_fax = $li_fax->ownerDocument->createElement ("span", "&nbsp;" . fax);
-		$li_fax->appendChild ($span_fax);
-		$fourth_ul->appendChild ($li_fax);
-		
-		$li_mail = $fourth_ul->ownerDocument->createElement ("li");
-		$i_mail = $li_mail->ownerDocument->createElement ("i");
-		$i_mail->setAttribute ("class", "fa fa-envelope");
-		$li_mail->appendChild ($i_mail);
-		$span_mail = $li_mail->ownerDocument->createElement ("span", "&nbsp;" . email);
-		$li_mail->appendChild ($span_mail);
-		$fourth_ul->appendChild ($li_mail);
+		addSimpleLi($fourth_ul, tel, "tel:" . tel, "footer-link", "fa fa-phone");
+
+		addSimpleLi($fourth_ul, fax, "fax:" . fax, "footer-link", "fa fa-fax");
+
+		addSimpleLi($fourth_ul, email, "mailto:" . email, "footer-link", "fa fa-envelope");
 		
 		$fourth_footerMenu->appendChild ($fourth_ul);
 		$fourth_col->appendChild ($fourth_footerMenu);

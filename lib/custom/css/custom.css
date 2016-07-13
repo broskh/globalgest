@@ -154,10 +154,26 @@ div.has-error > input.input-block, div.has-error > textarea.textarea-block
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483!important;
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483!important;
 }
+
 input.input-block:hover, textarea.textarea-block:hover 
 {
 	border-color: #66afe9!important;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
+}
+
+a.footer-link
+{
+	margin-left: 3px;
+	color: #AAA;
+}
+
+a.contact-link
+{
+	margin-left: 10px;
+    color: #6a6a6a;
+}
+a.footer-link:hover, a.contact-link:hover {
+    color: #EE3B24;
 }
