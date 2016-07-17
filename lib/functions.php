@@ -164,14 +164,15 @@
 	/*
 	 * Funzione utilizzata per aggiungere alla barra di navigazione orizzontale una
 	 * voce con sottomenu.
-	 * $father		e' il nodo al quale verra' appeso il sottomenu'
-	 * $content		e' la stringa attribuita alla voce di menu che ha sua volta conterra' il sottomenu'
-	 * $href		e' il link attribuito alla voce di menu che a sua volta conterra' il sottomenu'
+	 * $father		e' il nodo al quale verra' appeso il sottomenu'.
+	 * $content		e' la stringa attribuita alla voce di menu che ha sua volta conterra' il sottomenu'.
+	 * $href		e' il link attribuito alla voce di menu che a sua volta conterra' il sottomenu'.
+	 * $id			e' l'id assegnato al nodo ul contenente il sottomenu'.
 	 * $subVoices	e' l'insieme delle voci appartenenti al sottomenu' e dei link ad esse attribuite.
 	 * 				Puo' essere un array composto da due elementi (stringa corrispondente alla voce, link),
 	 * 				oppure un array di array di due elementi composti dalla coppia di elementi prima citati.
 	 */
-	function addMenuVoiceWithSubmenu (&$father, $content, $href, $subVoices)
+	function addMenuVoiceWithSubmenu (&$father, $content, $href, $id, $subVoices)
 	{
 		$li_dropdown = $father->ownerDocument->createElement ("li");
 		$li_dropdown->setAttribute ("class", "page-scroll dropdown");
@@ -192,6 +193,11 @@
 	
 		$ul = $li_dropdown->ownerDocument->createElement ("ul");
 		$ul->setAttribute ("class", "dropdown-menu");
+		
+		if ($id)
+		{
+			$ul->setAttribute ("id", $id);
+		}
 	
 		if (!is_array($subVoices [0]))	//se � stata passata come parametro solo una sottovoce
 		{
@@ -377,7 +383,7 @@
 		//GESTIRE IN QUALCHE MODO LA CLASS ACTIVE SULL'LI DELLA PAGINA APERTA
 		addMenuVoice($ul, "Home", dir_prj_root);
 		addMenuVoice($ul, "Chi Siamo", dir_chi_siamo);
-		addMenuVoiceWithSubmenu($ul, "Servizi", dir_servizi, $voci_servizi);
+		addMenuVoiceWithSubmenu($ul, "Servizi", dir_servizi, "dropdown-services", $voci_servizi);
 // 		addMenuVoice($ul, "Servizi", prj_servizi);
 		addMenuVoice($ul, "Gallery", dir_gallery);
 		addMenuVoice($ul, "Dove Siamo", dir_dove_siamo);
