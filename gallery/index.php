@@ -1,6 +1,8 @@
 <?php
 	include_once '../lib/functions.php';	//Includo la mia libreria PHP
 	$dom = open_html("Gallery");	//genero il dom
+ 	$head = $dom->getElementsByTagName("head")->item(0);	//salvo il riferimento al nodo body
+	addSimpleCSS ($head, dir_lib . "/thumbnail-gallery/thumbnail-gallery.css");	//libreria css utilizzata per la lista delle gallerie
  	$body = $dom->getElementsByTagName("body")->item(0);	//salvo il riferimento al nodo body
  	
  	addHorizontalNavbar($body);	//aggiungo la barra di navigazione

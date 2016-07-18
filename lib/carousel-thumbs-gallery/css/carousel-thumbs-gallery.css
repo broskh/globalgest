@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
+.thumbnail {
+    padding: 0;
+    height: 87.672px;	/*non so se è cosa buona*/
+    cursor: pointer;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
+}
+
+.thumbnail img
+{
+	height: 100%;
+}
+
+.carousel-control.right
+{
+	background-image: linear-gradient(to left,rgba(0,0,0,.8) 0,rgba(0,0,0,.01) 100%)!important;
+	right: 0px;
+}
+
+.carousel-control.left
+{
+	background-image: linear-gradient(to right,rgba(0,0,0,.8) 0,rgba(0,0,0,.01) 100%)!important;
+	left: 0px;
+}
+
+.carousel-control.right, .carousel-control.left
+{
+	width: 20%!important;
+	height: 100%!important;
+}
+
+.carousel-control.right>span, .carousel-control.left>span
+{
+	margin-top: 200%;
+	padding-top: 0px;
+}
+
+#myCarousel
+{
+	margin-top: 20px;
+}

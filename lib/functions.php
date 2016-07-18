@@ -216,7 +216,35 @@
 	}
 	
 	/*
+	 * Funzione che crea l'anteprima di un'immagine per la slideshow e la appende al nodo padre passata per parametro.
+	 * Viene utilizzata nella pagina contenente la gallery fotografica di un'azienda.
+	 * $father			e' il nodo al quale verra' appeso il sottomenu'.
+	 * $src				e' il percorso dell'immagine di anteprima.
+	 * $slide_number	e' il valore che viene assegnato all'attributo "data-slide-number".
+	 * $active			e' un valore booleano che se uguale a vero aggiunge la classe active al nodo.
+	 */
+	function addSlideImage (&$father, $src, $slide_number, $active)
+	{
+		$div = $father->ownerDocument->createElement ("div");
+		if ($active)
+		{
+			$div->setAttribute ("class", "active item");				
+		}
+		else {
+			$div->setAttribute ("class", "item");			
+		}
+		$div->setAttribute ("data-slide-number", $slide_number);
+	
+		$image = $div->ownerDocument->createElement ("img");
+		$image->setAttribute ("src", $src);
+	
+		$div->appendChild ($image);
+		$father->appendChild ($div);
+	}
+	
+	/*
 	 * Funzione che crea l'anteprima di un'immagine e la appende al nodo padre passata per parametro.
+	 * Viene utilizzata nella pagina contenente la lista delle gallery fotografiche.
 	 * $father		e' il nodo al quale verra' appeso il sottomenu'.
 	 * $href		e' il link attribuito all'anteprima dell'immagine.
 	 * $src			e' il percorso dell'immagine di anteprima.
@@ -226,19 +254,43 @@
 	{
 		$div = $father->ownerDocument->createElement ("div");
 		$div->setAttribute ("class", "col-lg-3 col-md-4 col-xs-6 thumb");
-		
+	
 		$a = $div->ownerDocument->createElement ("a");
 		$a->setAttribute ("class", "thumbnail");
 		$a->setAttribute ("href", $href);
-		$image = $a->ownerDocument->createElement ("img");
 		
+		$image = $a->ownerDocument->createElement ("img");	
 		$image->setAttribute ("class", "img-responsive");
 		$image->setAttribute ("src", $src);
 		$image->setAttribute ("alt", $alt);
-		
+	
 		$a->appendChild ($image);
 		$div->appendChild ($a);
 		$father->appendChild ($div);
+	}
+	
+	/*
+	 * Funzione che crea l'anteprima di un'immagine per la slideshow e la appende al nodo padre passata per parametro.
+	 * Viene utilizzata nella pagina contenente la gallery fotografica di un'azienda.
+	 * $father		e' il nodo al quale verra' appeso il sottomenu'.
+	 * $a_id		e' l'attributo id assegnato al nodo a.
+	 * $src			e' il percorso dell'immagine di anteprima.
+	 */
+	function addThumbnailImageForSlideshow (&$father, $a_id, $src)
+	{
+		$li = $father->ownerDocument->createElement ("li");
+		$li->setAttribute ("class", "col-sm-3");
+		
+		$a = $li->ownerDocument->createElement ("a");
+		$a->setAttribute ("class", "thumbnail");
+		$a->setAttribute ("id", $a_id);
+		
+		$image = $a->ownerDocument->createElement ("img");
+		$image->setAttribute ("src", $src);
+		
+		$a->appendChild ($image);
+		$li->appendChild ($a);
+		$father->appendChild ($li);
 	}
 	
 	/*
@@ -250,8 +302,6 @@
 // 		addSingleCSS ($head, prj_lib . "/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css");
 
 		addSimpleCSS ($head, dir_lib . "/font-awesome/css/font-awesome.min.css");
-
-		addSimpleCSS ($head, dir_lib . "/thumbnail-gallery/thumbnail-gallery.css");
 		
 		addSimpleCSS ($head, dir_lib . "/jquery-animate/animate.css");
 		
