@@ -17,6 +17,7 @@ HTML;
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
  	$gallery = $body->ownerDocument->createElement ("section");
  	$gallery->setAttribute ("id", "gallery-list");
+ 	$gallery->setAttribute ("class", "section_content");
  	
  	$container = $gallery->ownerDocument->createElement ("div");
  	$container->setAttribute ("class", "container");
@@ -30,7 +31,6 @@ HTML;
  	addContentTitle($container, ["", "GALLERY"], $subtitle);
  	
 //  	aggiungo i vari index
-//  	riga1
  	$row1 = $container->ownerDocument->createElement ("div");
 	$row1->setAttribute ("class", "row");
 	
@@ -41,7 +41,7 @@ HTML;
 	foreach ($dir as $fileinfo) {
 		if ($fileinfo->isDir() && !$fileinfo->isDot()) {
 			$folder = $fileinfo->getFilename();
-			addThumbnailImage($main_feature1, dir_gallery . "gallery-slideshow.php?azienda=" . $folder, dir_img . "/gallery/" . $folder . "/thumbnail.jpg", str_replace("-", " ", $folder));
+			addThumbnailImage($main_feature1, dir_gallery . "/gallery-slideshow.php?azienda=" . $folder, dir_img . "/gallery/" . $folder . "/thumbnail.jpg", str_replace("-", " ", $folder));
 		}
 	}	
  	
@@ -55,6 +55,5 @@ HTML;
  	addFooter($body);	//aggiungo il footer
  	addBackToTopButton($body);	//aggiungo il bottone che riporta all'inizio della pagina
 	importJS($body);	//importo le librerie Javascript
-	addSimpleJS($body, dir_lib . "/custom/js/services.js");	//aggiungo un piccolo script personalizzato per questa pagina
 	echo $dom->saveHTML();	//stampo tutto l'html
 ?>

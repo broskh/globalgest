@@ -31,6 +31,7 @@ HTML;
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
  	$service = $body->ownerDocument->createElement ("section");
  	$service->setAttribute ("id", "service");
+ 	$service->setAttribute ("class", "section_content");
  	
  	$container = $service->ownerDocument->createElement ("div");
  	$container->setAttribute ("class", "container");

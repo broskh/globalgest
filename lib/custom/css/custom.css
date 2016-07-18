@@ -19,8 +19,8 @@ io te @CHARSET "ISO-8859-1";
 }
 
 section.section_content{
-    padding-bottom: 130px;
-    padding-top: 90px;
+    padding-bottom: 70px!important;
+    padding-top: 70px!important;
 }
 
 .feature_content{
