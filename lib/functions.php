@@ -199,7 +199,7 @@
 			$ul->setAttribute ("id", $id);
 		}
 	
-		if (!is_array($subVoices [0]))	//se � stata passata come parametro solo una sottovoce
+		if (!is_array($subVoices [0]))	//se e' stata passata come parametro solo una sottovoce
 		{
 			addMenuVoice($ul, $subVoices [0], $subVoices [1]);
 		}
@@ -216,6 +216,32 @@
 	}
 	
 	/*
+	 * Funzione che crea l'anteprima di un'immagine e la appende al nodo padre passata per parametro.
+	 * $father		e' il nodo al quale verra' appeso il sottomenu'.
+	 * $href		e' il link attribuito all'anteprima dell'immagine.
+	 * $src			e' il percorso dell'immagine di anteprima.
+	 * $alt			e' il valore assegnato all'attributo alt dell'imagine di anteprima.
+	 */
+	function addThumbnailImage (&$father, $href, $src, $alt)
+	{
+		$div = $father->ownerDocument->createElement ("div");
+		$div->setAttribute ("class", "col-lg-3 col-md-4 col-xs-6 thumb");
+		
+		$a = $div->ownerDocument->createElement ("a");
+		$a->setAttribute ("class", "thumbnail");
+		$a->setAttribute ("href", $href);
+		$image = $a->ownerDocument->createElement ("img");
+		
+		$image->setAttribute ("class", "img-responsive");
+		$image->setAttribute ("src", $src);
+		$image->setAttribute ("alt", $alt);
+		
+		$a->appendChild ($image);
+		$div->appendChild ($a);
+		$father->appendChild ($div);
+	}
+	
+	/*
 	 * Funzione che appende le librerie CSS al nodo head, passato come parametro 
 	 */
 	function importCSS (&$head) {
@@ -224,6 +250,8 @@
 // 		addSingleCSS ($head, prj_lib . "/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css");
 
 		addSimpleCSS ($head, dir_lib . "/font-awesome/css/font-awesome.min.css");
+
+		addSimpleCSS ($head, dir_lib . "/thumbnail-gallery/thumbnail-gallery.css");
 		
 		addSimpleCSS ($head, dir_lib . "/jquery-animate/animate.css");
 		
