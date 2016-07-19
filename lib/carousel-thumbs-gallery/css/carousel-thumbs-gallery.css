@@ -12,7 +12,11 @@
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    width: 100%;
+    /*width: 100%;*/
+    width: auto;
+    min-height: 390px;
+    max-height: 390px;
+    margin: auto;
 }
 
 .thumbnail img
@@ -23,28 +27,64 @@
 .carousel-control.right
 {
 	background-image: linear-gradient(to left,rgba(0,0,0,.8) 0,rgba(0,0,0,.01) 100%)!important;
-	right: 0px;
 }
 
 .carousel-control.left
 {
 	background-image: linear-gradient(to right,rgba(0,0,0,.8) 0,rgba(0,0,0,.01) 100%)!important;
-	left: 0px;
+    left: 15px!important;
 }
 
 .carousel-control.right, .carousel-control.left
 {
-	width: 20%!important;
-	height: 100%!important;
+	width: 40px!important;
+	height: 40px!important;
 }
 
-.carousel-control.right>span, .carousel-control.left>span
+.carousel-control
+{	
+	font-size: 17px;
+	top: 45%;
+    text-align: center;
+    background: #232323;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: 0.6;
+    filter: alpha(opacity=50);
+}
+
+.carousel-control>span
 {
-	margin-top: 200%;
-	padding-top: 0px;
+	padding: 0px!important;
+    vertical-align: middle;
+    display: inline-block;
+    margin: auto;
 }
 
 #myCarousel
 {
 	margin-top: 20px;
+}
+
+.carousel-inner>.item>a
+{
+	height: 100%;
+}
+
+.helper
+{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;	
+}
+.item
+{
+	margin: 0 0;
+	text-align: center;
+}
+
+#slider
+{
+	min-height: 480px;
 }

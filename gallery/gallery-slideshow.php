@@ -41,6 +41,7 @@ HTML;*/
 	$main_feature1 = $row1->ownerDocument->createElement ("div");
 	$main_feature1->setAttribute ("class", "main_feature text-center");
 	
+// 		aggiungo la struttura per le anteprime
 	$slider_thumbs = $main_feature1->ownerDocument->createElement ("div");
 	$slider_thumbs->setAttribute ("class", "col-sm-6");
 	$slider_thumbs->setAttribute ("id", "slider-thumbs");
@@ -48,22 +49,10 @@ HTML;*/
 	$hide_bullets = $slider_thumbs->ownerDocument->createElement ("ul");
 	$hide_bullets->setAttribute ("class", "hide-bullets");
 	
-	$i = 0;
-	$dir = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . dir_img . "/gallery/" . $folder_name);
-	foreach ($dir as $fileinfo) {
-		if ($fileinfo->isFile() && !$fileinfo->isDot()) {
-			$file_name = $fileinfo->getFilename();
-			if (strcmp($file_name, "thumbnail.jpg"))
-			{
-				addThumbnailImageForSlideshow($hide_bullets, "carousel-selector-" . $i, dir_img . "/gallery/" . $folder_name . "/" . $file_name);
-				$i++;
-			}
-		}
-	}
-	
 	$slider_thumbs->appendChild ($hide_bullets);
 	$main_feature1->appendChild ($slider_thumbs);
 	
+// 		aggiungo la struttura per lo slider vero e proprio
 	$slider = $main_feature1->ownerDocument->createElement ("div");
 	$slider->setAttribute ("class", "col-sm-6 col-xs-12");
 	$slider->setAttribute ("id", "slider");
@@ -77,15 +66,22 @@ HTML;*/
 	$my_carousel->setAttribute ("id", "myCarousel");
 	
  	$carousel_inner = $my_carousel->ownerDocument->createElement ("div");
- 	$carousel_inner->setAttribute ("class", "carousel-inner");
+ 	$carousel_inner->setAttribute ("class", "carousel-inner");	
  	
+ 	$my_carousel->appendChild ($carousel_inner);
+ 	
+//  	ciclo con il quale aggiungo effettivamente le anteprime e le immagini nello slider
  	$i = 0;
- 	$dir = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . dir_img . "/gallery/" . $folder_name);
- 	foreach ($dir as $fileinfo) {
- 		if ($fileinfo->isFile() && !$fileinfo->isDot()) {
- 			$file_name = $fileinfo->getFilename();
- 			if (strcmp($file_name, "thumbnail.jpg"))
- 			{
+	$dir = new DirectoryIterator($_SERVER["DOCUMENT_ROOT"] . dir_img . "/gallery/" . $folder_name);
+	foreach ($dir as $fileinfo) {
+		if ($fileinfo->isFile() && !$fileinfo->isDot()) {
+			$file_name = $fileinfo->getFilename();
+			if (strcmp($file_name, "thumbnail.jpg"))
+			{
+// 					aggiungo le anteprime
+				addThumbnailImageForSlideshow($hide_bullets, "carousel-selector-" . $i, dir_img . "/gallery/" . $folder_name . "/" . $file_name);
+				
+// 					aggiungo le immagini nello slider
  				if ($i==0)
  				{
  					addSlideImage($carousel_inner, dir_img . "/gallery/" . $folder_name . "/" . $file_name, $i, true);
@@ -94,18 +90,22 @@ HTML;*/
  				{
  					addSlideImage($carousel_inner, dir_img . "/gallery/" . $folder_name . "/" . $file_name, $i, false);
  				}
- 				$i++;
- 			}
- 		}
- 	}
- 	
- 	$my_carousel->appendChild ($carousel_inner);
- 	
+ 				
+				$i++;
+			}
+		}
+	}
+
+ 	//aggiungo i bottoni dello slider
  	$left_control = $my_carousel->ownerDocument->createElement ("a");
  	$left_control->setAttribute ("class", "left carousel-control");
  	$left_control->setAttribute ("href", "#myCarousel");
  	$left_control->setAttribute ("role", "button");
  	$left_control->setAttribute ("data-slide", "prev");
+ 	
+ 	$helper = $left_control->ownerDocument->createElement ("span");
+ 	$helper->setAttribute ("class", "helper");
+ 	$left_control->appendChild ($helper);
  	
  	$left_icon = $left_control->ownerDocument->createElement ("span");
  	$left_icon->setAttribute ("class", "fa fa-chevron-left");
@@ -118,6 +118,10 @@ HTML;*/
  	$right_control->setAttribute ("href", "#myCarousel");
  	$right_control->setAttribute ("role", "button");
  	$right_control->setAttribute ("data-slide", "next");
+ 	
+ 	$helper = $right_control->ownerDocument->createElement ("span");
+ 	$helper->setAttribute ("class", "helper");
+ 	$right_control->appendChild ($helper);
  	
  	$right_icon = $right_control->ownerDocument->createElement ("span");
  	$right_icon->setAttribute ("class", "fa fa-chevron-right");

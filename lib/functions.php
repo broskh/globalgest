@@ -234,7 +234,7 @@
 			$div->setAttribute ("class", "item");			
 		}
 		$div->setAttribute ("data-slide-number", $slide_number);
-	
+			
 		$image = $div->ownerDocument->createElement ("img");
 		$image->setAttribute ("src", $src);
 	
