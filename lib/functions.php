@@ -29,6 +29,9 @@
 	define ( "tel", "+39 059 9537400" ); //telefono sede
 	define ( "fax", "+39 059 9537496" ); //fax sede
 	define ( "email", "info@globalgest.mo.it" ); //indirizzo mail per info
+	define ( "giorni_lavorativi", "Dal lunedì al venerdì" );
+	define ( "orari_mattina", "8.30 - 12.30" );
+	define ( "orari_pomeriggio", "14.30 - 18.30" );
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo a con class e href passati per parametro.
@@ -942,6 +945,18 @@
 		addSimpleLi($fourth_ul, fax, "fax:" . fax, "footer-link", "fa fa-fax");
 
 		addSimpleLi($fourth_ul, email, "mailto:" . email, "footer-link", "fa fa-envelope");
+		
+		$li_time = $fourth_ul->ownerDocument->createElement ("li");
+		addSimpleFAIcon($li_time, "fa fa-clock-o");
+		$a_time = $li_time->ownerDocument->createElement ("a");
+		$a_time->setAttribute ("class", "footer-no-link");
+		$a_time->appendChild($a_time->ownerDocument->createTextNode(giorni_lavorativi . ": "));
+		addBR($a_time);
+		$a_time->appendChild($a_time->ownerDocument->createTextNode(orari_mattina));
+		addBR($a_time);
+		$a_time->appendChild($a_time->ownerDocument->createTextNode(orari_pomeriggio));
+		$li_time->appendChild ($a_time);
+		$fourth_ul->appendChild ($li_time);
 		
 		$fourth_footerMenu->appendChild ($fourth_ul);
 		$fourth_col->appendChild ($fourth_footerMenu);

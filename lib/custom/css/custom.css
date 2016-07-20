@@ -163,13 +163,13 @@ input.input-block:hover, textarea.textarea-block:hover
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)!important;
 }
 
-a.footer-link
+a.footer-link, a.footer-no-link
 {
 	margin-left: 3px;
 	color: #AAA;
 }
 
-a.contact-link
+a.contact-link, a.contact-no-link
 {
 	margin-left: 10px;
     color: #6a6a6a;

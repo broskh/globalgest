@@ -87,13 +87,6 @@ HTML;
 	$information2->appendChild ($a);
 	$address->appendChild ($information2);
 	
-	/*$information1->appendChild($information1->ownerDocument->createElement ("span", via . ", " . n_civico));
-	addBR($information1);
-	$information1->appendChild($information1->ownerDocument->createElement ("span", citta . " " . provincia_abbr . ", " . cap));
-	addBR($information1);
-	$information1->appendChild($information1->ownerDocument->createElement ("span", paese));
-	$address->appendChild ($information1);*/
-	
 	$information3 = $address->ownerDocument->createElement ("p");
 	addSimpleFAIcon($information3, "fa fa-phone");
 	addSimpleA($information3, tel, "tel:" . tel, "contact-link");
@@ -104,21 +97,18 @@ HTML;
 	addSimpleFAIcon($information3, "fa fa-envelope");
 	addSimpleA($information3, email, "mailto:" . email, "contact-link");
 	$address->appendChild ($information3);
-	/*$i_tel = $information3->ownerDocument->createElement ("i");
-	$i_tel->setAttribute ("class", "fa fa-phone");
-	$information3->appendChild ($i_tel);
-	$information3->appendChild($information3->ownerDocument->createElement ("span", "&nbsp;&nbsp;tel: " . tel));
-	addBR($information3);
-	$i_fax = $information3->ownerDocument->createElement ("i");
-	$i_fax->setAttribute ("class", "fa fa-fax");
-	$information3->appendChild ($i_fax);
-	$information3->appendChild($information3->ownerDocument->createElement ("span", "&nbsp;&nbsp;fax: " . fax));
-	addBR($information3);
-	$i_mail = $information3->ownerDocument->createElement ("i");
-	$i_mail->setAttribute ("class", "fa fa-envelope");
-	$information3->appendChild ($i_mail);
-	$information3->appendChild($information3->ownerDocument->createElement ("span", "&nbsp;&nbsp;e-mail: " . email));
-	$address->appendChild ($information3);*/
+	
+	$information4 = $address->ownerDocument->createElement ("p");
+	addSimpleFAIcon($information4, "fa fa-clock-o");
+	$a_time = $information4->ownerDocument->createElement ("a");
+	$a_time->setAttribute ("class", "contact-no-link");
+	$a_time->appendChild($a_time->ownerDocument->createTextNode(giorni_lavorativi . ": "));
+	addBR($a_time);
+	$a_time->appendChild($a_time->ownerDocument->createTextNode(orari_mattina));
+	addBR($a_time);
+	$a_time->appendChild($a_time->ownerDocument->createTextNode(orari_pomeriggio));
+	$information4->appendChild ($a_time);
+	$address->appendChild ($information4);
 	
 	$col3->appendChild ($address);
 	$gmap->appendChild ($col3);
