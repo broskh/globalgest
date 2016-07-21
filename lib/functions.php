@@ -219,6 +219,33 @@
 	}
 	
 	/*
+	 * Funzione che aggiunge al nodo padre passato per parametro un paragrafo con o senza titolo e uno o più paragrafi come contenuto.
+	 * $father			e' il nodo al quale verra' appeso il paragrafo.
+	 * $title			e' il titolo del paragrafo (se presente).
+	 * $paragraphs		e' una stringa contenente il paragrafo, o un array di stringhe.
+	 */
+	function addPrivacyPolicyParagraph (&$father, $title, $paragraphs)
+	{
+		$p = $father->ownerDocument->createELement ("div");
+		if ($title)
+		{
+			$p->appendChild ($p->ownerDocument->createElement ("strong", $title));
+		}
+		if (is_array($paragraphs))
+		{
+			foreach ($paragraphs as $paragraph)
+			{
+				$p->appendChild ($p->ownerDocument->createElement ("p", $paragraph));
+			}
+		}
+		else
+		{
+			$p->appendChild ($p->ownerDocument->createElement ("p", $paragraphs));
+		}
+		$father->appendChild ($p);
+	}
+	
+	/*
 	 * Funzione che crea l'anteprima di un'immagine per la slideshow e la appende al nodo padre passata per parametro.
 	 * Viene utilizzata nella pagina contenente la gallery fotografica di un'azienda.
 	 * $father			e' il nodo al quale verra' appeso il sottomenu'.
@@ -981,6 +1008,7 @@
 		
 		$fifth_col->appendChild ($fifth_footerMenu);
 		$top_row->appendChild ($fifth_col);*/
+		
 		$top_container->appendChild ($top_row);
 		$top_footer->appendChild ($top_container);
 		$footer->appendChild ($top_footer);
@@ -1010,7 +1038,26 @@
 		$first_bot_col->appendChild ($copyright_div);
 		$bottom_row->appendChild ($first_bot_col);
 		
-		//BOTTONI SOCIAL (SECONDA PARTE)
+// 			metto link per privacy policy
+		$second_bot_col = $bottom_row->ownerDocument->createElement ("div");
+		$second_bot_col->setAttribute ("class", "col-md-6 col-sm-6 col-xs-12");
+		
+		$privacy_policy_div = $second_bot_col->ownerDocument->createElement ("div");
+		$privacy_policy_div->setAttribute ("class", "footer_mid pull-right");
+		
+		$privacy_policy_p = $privacy_policy_div->ownerDocument->createElement ("p");
+		
+		$privacy_policy_a = $privacy_policy_p->ownerDocument->createElement ("a", "Privacy Policy");
+		$privacy_policy_a->setAttribute ("href", dir_prj_root . "/privacy-policy.php");
+		$privacy_policy_a->setAttribute ("class", "privacy-policy-link");
+		$privacy_policy_a->setAttribute ("target", "_blank");
+		
+		$privacy_policy_p->appendChild ($privacy_policy_a);
+		$privacy_policy_div->appendChild ($privacy_policy_p);
+		$second_bot_col->appendChild ($privacy_policy_div);
+		$bottom_row->appendChild ($second_bot_col);
+		
+		//BOTTONI SOCIAL (DA SOSTITUIRE AL LINK DEL PRIVACY POLICY)
 		/*$second_bot_col = $bottom_row->ownerDocument->createElement ("div");
 		$second_bot_col->setAttribute ("class", "col-md-6 col-sm-6 col-xs-12");
 		
