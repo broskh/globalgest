@@ -335,11 +335,11 @@
 		
 		addSimpleCSS ($head, dir_lib . "/jquery-animate/animate.css");
 		
-		addSimpleCSS ($head, dir_lib . "/owl/owl.carousel.css");
+// 		addSimpleCSS ($head, dir_lib . "/owl/owl.carousel.css");
 		
-		addSimpleCSS ($head, dir_lib . "/owl/owl.theme.css");
+// 		addSimpleCSS ($head, dir_lib . "/owl/owl.theme.css");
 		
-		addSimpleCSS ($head, dir_lib . "/jquery-prettyPhoto/prettyPhoto.css");
+// 		addSimpleCSS ($head, dir_lib . "/jquery-prettyPhoto/prettyPhoto.css");
 		
         addSimpleCSS ($head, dir_lib . "/red/red.css");
         
@@ -347,17 +347,15 @@
         
 		addSimpleCSS ($head, dir_lib . "/responsive/responsive.css");
         
-		$jquery_fancybox = $head->ownerDocument->createElement("link");
-		$jquery_fancybox->setAttribute ("href", dir_lib . "/jquery-fancybox/jquery.fancybox.css?v=2.1.5");
-		$jquery_fancybox->setAttribute ("type", "text/css");
-		$jquery_fancybox->setAttribute ("media", "screen");
-		$head->appendChild($jquery_fancybox);
+// 		$jquery_fancybox = $head->ownerDocument->createElement("link");
+// 		$jquery_fancybox->setAttribute ("href", dir_lib . "/jquery-fancybox/jquery.fancybox.css?v=2.1.5");
+// 		$jquery_fancybox->setAttribute ("type", "text/css");
+// 		$jquery_fancybox->setAttribute ("media", "screen");
+// 		$head->appendChild($jquery_fancybox);
         
 		addSimpleCSS ($head, dir_lib . "/bootstrap3-dialog/css/bootstrap-dialog.css");
 		
        	addSimpleCSS ($head, dir_lib . "/custom/css/custom.css");
-
-//         addSimpleJS($head, "http://maps.google.com/maps/api/js?sensor=false");
         
         addSimpleCSS ($head, "http://fonts.googleapis.com/css?family=Lato:400,300");
         
@@ -372,39 +370,35 @@
         
         addSimpleJS($body, dir_lib . "/bootstrap-3.3.6-dist/js/bootstrap.min.js");
         
-        addSimpleJS($body, dir_lib . "/owl/owl.carousel.min.js");
+//         addSimpleJS($body, dir_lib . "/owl/owl.carousel.min.js");
         
-       	addSimpleJS($body, dir_lib . "/jquery-isotope/jquery.isotope.js");
+//        	addSimpleJS($body, dir_lib . "/jquery-isotope/jquery.isotope.js");
         
-        addSimpleJS($body, dir_lib . "/jquery-prettyPhoto/jquery.prettyPhoto.js");
+//         addSimpleJS($body, dir_lib . "/jquery-prettyPhoto/jquery.prettyPhoto.js");
         
         addSimpleJS($body, dir_lib . "/smooth-scroll/smooth-scroll.js");
         
-        addSimpleJS($body, dir_lib . "/jquery-fancybox/jquery.fancybox.pack.js?v=2.1.5");
+//         addSimpleJS($body, dir_lib . "/jquery-fancybox/jquery.fancybox.pack.js?v=2.1.5");
         
-        addSimpleJS($body, dir_lib . "/jquery-counterup/jquery.counterup.min.js");
+//         addSimpleJS($body, dir_lib . "/jquery-counterup/jquery.counterup.min.js");
         
-        addSimpleJS($body, dir_lib . "/waypoints/waypoints.min.js");
+//         addSimpleJS($body, dir_lib . "/waypoints/waypoints.min.js");
         
-        addSimpleJS($body, dir_lib . "/jquery-bxslider/jquery.bxslider.min.js");
+//         addSimpleJS($body, dir_lib . "/jquery-bxslider/jquery.bxslider.min.js");
         
         addSimpleJS($body, dir_lib . "/jquery-scrollTo/jquery.scrollTo.js");
         
         addSimpleJS($body, dir_lib . "/jquery-easing/jquery.easing.1.3.js");
         
-        addSimpleJS($body, dir_lib . "/jquery-singlePageNav/jquery.singlePageNav.js");
+//         addSimpleJS($body, dir_lib . "/jquery-singlePageNav/jquery.singlePageNav.js");
         
-        addSimpleJS($body, dir_lib . "/wow/wow.min.js");
+//         addSimpleJS($body, dir_lib . "/wow/wow.min.js");
         
         addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");
         
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
         
         addSimpleJS($body, dir_lib . "/jValidator/validator.js");
-        
-//         addSimpleJS($body, dir_lib . "/gmaps/gmaps.js");
-        
-//         addSimpleJS($body, dir_lib . "/gmaps/myLocation.js");
 
         addSimpleJS($body, dir_lib . "/custom/js/custom.js");
     }
