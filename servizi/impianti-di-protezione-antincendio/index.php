@@ -16,7 +16,7 @@
 HTML;
  	$par2_text = <<<HTML
  	Utilizziamo materiali di primarie case produttrici, in grado di garantire qualit&agrave; 
- 			e sicurezza mantenendo conformità con le aspettative del cliente.
+ 			e sicurezza mantenendo conformitï¿½ con le aspettative del cliente.
 HTML;
  	$par3_text = <<<HTML
  	Siamo specializzati in:
@@ -24,11 +24,11 @@ HTML;
 // 		fine variabili di testo-->
  	
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
- 	$about_us = $body->ownerDocument->createElement ("section");
- 	$about_us->setAttribute ("id", "impianti-di-protezione-antincendio");
- 	$about_us->setAttribute ("class", "section_content");
+ 	$fire_protection_system = $body->ownerDocument->createElement ("section");
+ 	$fire_protection_system->setAttribute ("id", "impianti-di-protezione-antincendio");
+ 	$fire_protection_system->setAttribute ("class", "section_content");
  	
- 	$container = $about_us->ownerDocument->createElement ("div");
+ 	$container = $fire_protection_system->ownerDocument->createElement ("div");
  	$container->setAttribute ("class", "container");
  	
 // 		aggiungo titolo
@@ -63,8 +63,8 @@ HTML;
 	$main_feature->appendChild ($col);
  	$row1->appendChild ($main_feature);
  	$container->appendChild ($row1);
- 	$about_us->appendChild ($container);
- 	$body->appendChild($about_us);
+ 	$fire_protection_system->appendChild ($container);
+ 	$body->appendChild($fire_protection_system);
 //  	fine della struttura-->
 	
 //  	<------------------------------------------------------>

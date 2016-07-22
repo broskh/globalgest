@@ -17,7 +17,7 @@
 HTML;
  	$par2_text = <<<HTML
  	Utilizziamo materiali di primarie case produttrici, in grado di garantire 
- 			qualit&agrave; e sicurezza mantenendo conformità con le aspettative del cliente.
+ 			qualit&agrave; e sicurezza mantenendo conformitï¿½ con le aspettative del cliente.
 HTML;
 //  	$par3_text = <<<HTML
 //  	Siamo specializzati in:
@@ -25,11 +25,11 @@ HTML;
 // 		fine variabili di testo-->
  	
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
- 	$about_us = $body->ownerDocument->createElement ("section");
- 	$about_us->setAttribute ("id", "impianti-manifestazioni-fiere");
- 	$about_us->setAttribute ("class", "section_content");
+ 	$events_fairs_system = $body->ownerDocument->createElement ("section");
+ 	$events_fairs_system->setAttribute ("id", "impianti-manifestazioni-fiere");
+ 	$events_fairs_system->setAttribute ("class", "section_content");
  	
- 	$container = $about_us->ownerDocument->createElement ("div");
+ 	$container = $events_fairs_system->ownerDocument->createElement ("div");
  	$container->setAttribute ("class", "container");
  	
 // 		aggiungo titolo
@@ -66,8 +66,8 @@ HTML;
 	$main_feature->appendChild ($col);
  	$row1->appendChild ($main_feature);
  	$container->appendChild ($row1);
- 	$about_us->appendChild ($container);
- 	$body->appendChild($about_us);
+ 	$events_fairs_system->appendChild ($container);
+ 	$body->appendChild($events_fairs_system);
 //  	fine della struttura-->
 	
 //  	<------------------------------------------------------>
