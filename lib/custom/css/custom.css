@@ -210,3 +210,13 @@ section#privacy-policy .main_feature div>strong~div>strong
 	font-size: 12px;
 	font-style: italic; 
 }
+
+ul.cleaning-machine-list>li:before
+{
+	margin-left: 20px;
+	display: inline-block;
+    margin-right: 8px;
+    color: #5B5B5B;
+    content: ">";
+    font-family: FontAwesome;
+}
