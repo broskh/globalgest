@@ -398,7 +398,7 @@
         
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
         
-        addSimpleJS($body, dir_lib . "/jValidator/validator.js");
+//         addSimpleJS($body, dir_lib . "/jValidator/validator.js");
 
         addSimpleJS($body, dir_lib . "/custom/js/custom.js");
     }

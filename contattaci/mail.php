@@ -2,7 +2,7 @@
 	include_once '../lib/functions.php';	//Includo la mia libreria PHP
 	$name = $_POST ["name"];
 	$email = $_POST ["email"];
-	$telephone = $_POST ["telephone"];
+	$telephone = $_POST ["phone"];
 	$message = $_POST ["message"];
 	
 	$to = email;
@@ -20,5 +20,4 @@
 	{
 		$xml->addChild("error", "true");
 	}
-	$xml->addChild("error", "false");
 ?>
