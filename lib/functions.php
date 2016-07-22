@@ -1028,6 +1028,12 @@
 		$copyright_p->setAttribute ("class", "text-block");
 		$copyright_p->appendChild ($copyright_p->ownerDocument->createElement("span", ragione_sociale));
 		
+		addBR($copyright_p);
+		$designed_by = $copyright_p->ownerDocument->createElement ("span", "Designed by ");
+		$designed_by->setAttribute ("class", "designed-by");		
+		addSimpleA($designed_by, "Alessio Scheri", "mailto:alessio.scheri@gmail.com", "");
+		
+		$copyright_p->appendChild ($designed_by);
 		$copyright_div->appendChild ($copyright_p);
 		$first_bot_col->appendChild ($copyright_div);
 		$bottom_row->appendChild ($first_bot_col);

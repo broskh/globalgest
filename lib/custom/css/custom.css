@@ -220,3 +220,23 @@ ul.cleaning-machine-list>li:before
     content: ">";
     font-family: FontAwesome;
 }
+
+span.designed-by
+{
+	font-size: 10px;
+}
+
+span.designed-by>a
+{	
+	color: #C4C4C4!important;
+}
+
+span.designed-by>a:hover
+{
+	color: #EE3B24!important;
+}
+
+p.text-block
+{
+	margin: 15px 0px;
+}
