@@ -35,8 +35,8 @@
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo a con class e href passati per parametro.
-	 * Il parametro $content � il contenuto del nodo.
-	 * Se $class � nullo, il nodo a non avr� class
+	 * Il parametro $content e' il contenuto del nodo.
+	 * Se $class e' nullo, il nodo a non avra' class
 	 */
 	function addSimpleA (&$father, $content, $href, $class)
 	{
@@ -328,37 +328,16 @@
 	 */
 	function importCSS (&$head) {
         addSimpleCSS ($head, dir_lib . "/bootstrap-3.3.6-dist/css/bootstrap.min.css");
-
 // 		addSingleCSS ($head, prj_lib . "/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css");
-
-		addSimpleCSS ($head, dir_lib . "/font-awesome/css/font-awesome.min.css");
-		
-		addSimpleCSS ($head, dir_lib . "/jquery-animate/animate.css");
-		
-// 		addSimpleCSS ($head, dir_lib . "/owl/owl.carousel.css");
-		
-// 		addSimpleCSS ($head, dir_lib . "/owl/owl.theme.css");
-		
-// 		addSimpleCSS ($head, dir_lib . "/jquery-prettyPhoto/prettyPhoto.css");
-		
-        addSimpleCSS ($head, dir_lib . "/red/red.css");
-        
-       	addSimpleCSS ($head, dir_lib . "/custom/css/template.css");
-        
-		addSimpleCSS ($head, dir_lib . "/responsive/responsive.css");
-        
-// 		$jquery_fancybox = $head->ownerDocument->createElement("link");
-// 		$jquery_fancybox->setAttribute ("href", dir_lib . "/jquery-fancybox/jquery.fancybox.css?v=2.1.5");
-// 		$jquery_fancybox->setAttribute ("type", "text/css");
-// 		$jquery_fancybox->setAttribute ("media", "screen");
-// 		$head->appendChild($jquery_fancybox);
-        
-		addSimpleCSS ($head, dir_lib . "/bootstrap3-dialog/css/bootstrap-dialog.css");
-		
+		addSimpleCSS ($head, dir_lib . "/font-awesome/css/font-awesome.min.css");		
+		addSimpleCSS ($head, dir_lib . "/jquery-animate/animate.css");		
+        addSimpleCSS ($head, dir_lib . "/red/red.css");        
+       	addSimpleCSS ($head, dir_lib . "/custom/css/template.css");        
+		addSimpleCSS ($head, dir_lib . "/responsive/responsive.css");        
+		addSimpleCSS ($head, dir_lib . "/bootstrap3-dialog/css/bootstrap-dialog.css");		
        	addSimpleCSS ($head, dir_lib . "/custom/css/custom.css");
-        
-        addSimpleCSS ($head, "http://fonts.googleapis.com/css?family=Lato:400,300");
-        
+       	
+        addSimpleCSS ($head, "http://fonts.googleapis.com/css?family=Lato:400,300");        
         addSimpleCSS ($head, "http://fonts.googleapis.com/css?family=Raleway:400,300,500");
     }
 	
@@ -366,40 +345,13 @@
 	 * Funzione che appende le librerie JS al nodo body, passato come parametro 
 	 */
     function importJS (&$body) { //importa librerie
-        addSimpleJS($body, dir_lib . "/jquery-2.2.1/jquery-2.2.1.min.js");
-        
-        addSimpleJS($body, dir_lib . "/bootstrap-3.3.6-dist/js/bootstrap.min.js");
-        
-//         addSimpleJS($body, dir_lib . "/owl/owl.carousel.min.js");
-        
-//        	addSimpleJS($body, dir_lib . "/jquery-isotope/jquery.isotope.js");
-        
-//         addSimpleJS($body, dir_lib . "/jquery-prettyPhoto/jquery.prettyPhoto.js");
-        
-        addSimpleJS($body, dir_lib . "/smooth-scroll/smooth-scroll.js");
-        
-//         addSimpleJS($body, dir_lib . "/jquery-fancybox/jquery.fancybox.pack.js?v=2.1.5");
-        
-//         addSimpleJS($body, dir_lib . "/jquery-counterup/jquery.counterup.min.js");
-        
-//         addSimpleJS($body, dir_lib . "/waypoints/waypoints.min.js");
-        
-//         addSimpleJS($body, dir_lib . "/jquery-bxslider/jquery.bxslider.min.js");
-        
-        addSimpleJS($body, dir_lib . "/jquery-scrollTo/jquery.scrollTo.js");
-        
-        addSimpleJS($body, dir_lib . "/jquery-easing/jquery.easing.1.3.js");
-        
-//         addSimpleJS($body, dir_lib . "/jquery-singlePageNav/jquery.singlePageNav.js");
-        
-//         addSimpleJS($body, dir_lib . "/wow/wow.min.js");
-        
-        addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");
-        
+        addSimpleJS($body, dir_lib . "/jquery-2.2.1/jquery-2.2.1.min.js");        
+        addSimpleJS($body, dir_lib . "/bootstrap-3.3.6-dist/js/bootstrap.min.js");        
+        addSimpleJS($body, dir_lib . "/smooth-scroll/smooth-scroll.js");        
+        addSimpleJS($body, dir_lib . "/jquery-scrollTo/jquery.scrollTo.js");        
+        addSimpleJS($body, dir_lib . "/jquery-easing/jquery.easing.1.3.js");        
+        addSimpleJS($body, dir_lib . "/bootstrap3-dialog/js/bootstrap-dialog.js");        
         addSimpleJS($body, dir_lib . "/custom/js/template.js");
-        
-//         addSimpleJS($body, dir_lib . "/jValidator/validator.js");
-
         addSimpleJS($body, dir_lib . "/custom/js/custom.js");
     }
 	
@@ -482,16 +434,12 @@
 		$ul = $navbar->ownerDocument->createElement ("ul");
 		$ul->setAttribute ("class", "nav navbar-nav navbar-right");
 
-		//GESTIRE IN QUALCHE MODO LA CLASS ACTIVE SULL'LI DELLA PAGINA APERTA
 		addMenuVoice($ul, "Home", dir_prj_root);
 		addMenuVoice($ul, "Chi Siamo", dir_chi_siamo);
 		addMenuVoiceWithSubmenu($ul, "Servizi", dir_servizi, "dropdown-services", $voci_servizi);
-// 		addMenuVoice($ul, "Servizi", prj_servizi);
 		addMenuVoice($ul, "Gallery", dir_gallery);
 		addMenuVoice($ul, "Dove Siamo", dir_dove_siamo);
 		addMenuVoice($ul, "Contattaci", dir_contattaci);
-// 		addMenuVoice($ul, "Normative", prj_normative);
-// 		addMenuVoice($ul, "Link Rapidi", prj_link_rapidi);
 		
 		$navbar->appendChild ($ul);
 		$row->appendChild ($navbar);
@@ -502,7 +450,7 @@
 
 	/*
 	 * Funzione che aggiunge al nodo body passato come parametro lo slider.
-	 * AL MOMENTO NON UTILIZZATA.
+	 * AL MOMENTO NON UTILIZZATA. (probabilmente manca qualche libreria per utilizzarlo)
 	 */
 	function addHeaderSlider (&$body)
 	{
@@ -734,38 +682,7 @@
 	 * Funzione che aggiunge al nodo body passato come parametro la foto della global come header
 	 */
 	function addHeaderImage (&$body)
-	{
-		/*$section = $body->ownerDocument->createElement ("section");
-		$section->setAttribute ("id", "slider_part");
-		
-		$carousel_slide = $section->ownerDocument->createElement ("div");
-		$section->setAttribute ("id", "carousel-example-generic");
-		$carousel_slide->setAttribute ("class", "carousel slide");
-		$carousel_slide->setAttribute ("data-ride", "carousel");
-		
-		//creazione dello slider vero e proprio+
-		$carousel = $carousel_slide->ownerDocument->createElement ("div");
-		$carousel->setAttribute ("class", "carousel-inner");
-		
-		//item 1
-		$item = $carousel->ownerDocument->createElement ("div");
-		$item->setAttribute ("class", "item active");
-		
-		$overlay_slide = $item->ownerDocument->createElement ("div");
-		$overlay_slide->setAttribute ("class", "overlay-slide");
-		
-		$img = $overlay_slide->ownerDocument->createElement ("img");
-		$img->setAttribute ("src", prj_img . "/header.jpg");
-		$img->setAttribute ("alt", "");
-		$img->setAttribute ("class", "img-responsive");
-		
-		$overlay_slide->appendChild($img);
-		$item->appendChild($overlay_slide);
-		$carousel->appendChild ($item);
-		$carousel_slide->appendChild($carousel);
-		$section->appendChild ($carousel_slide);
-		$body->appendChild($section);*/
-		
+	{		
 		$section = $body->ownerDocument->createElement ("section");
 		$section->setAttribute ("id", "header_image");
 		
@@ -791,6 +708,7 @@
      * Il parametro title � la stringa che sar� inserita nella tag omonima.
      */
 	function open_html($title) { // apre la pagina con il relativo titolo
+		
 		//creo il documento
 		$dom = new DOMDocument();
 		$dom->loadHTML("<html class='no-js'><head></head><body data-spy='scroll' data-target='.navbar-fixed-top'></body></html>");
@@ -1171,24 +1089,6 @@
 			$h3_title->appendChild ($h3_title->ownerDocument->createElement ("span", $title));
 		}
 		
-// 		//predispongo le variabili nel caso in cui abbia ricevuto un array per mettere la seconda stringa in grassetto
-// 		if (is_array($title))
-// 		{
-// 			$titleGr = $title [1];
-// 			$title = $title [0]; 
-// 		}
-			
-// 		$h3_title = $feature_header->ownerDocument->createElement ("h3", $title);
-// 		$h3_title->setAttribute ("class", "feature_title");
-		
-// 		//inserisco la stringa del titolo in grassetto se presente
-// 		if (isset($titleGr))
-// 		{
-// 			$h3_title_gr = $h3_title->ownerDocument->createElement ("b", $titleGr);
-			
-// 			$h3_title->appendChild ($h3_title_gr);
-			
-// 		}
 		$feature_header->appendChild ($h3_title);
 		
 		if (is_string($subtitle))
@@ -1239,12 +1139,6 @@
 		$feature_content->appendChild ($icon);
 		
 		$feature_content->appendChild ($feature_content->ownerDocument->createElement ("h5", $title));
-		/*$feature_content->appendChild ($feature_content->ownerDocument->createElement ("p", $paragraph));
-		
-		$button = $feature_content->ownerDocument->createElement ("button", "Read More");
-		$button->setAttribute ("class", "btn btn-main");
-		
-		$feature_content->appendChild ($button);*/
 		$col->appendChild ($feature_content);
 		$father->appendChild ($col);
 	}

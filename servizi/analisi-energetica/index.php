@@ -14,13 +14,6 @@
  			le specifiche esigenze del committente sotto tutti gli aspetti, sia normativi che di 
  			utilizzo funzionale degli stessi.
 HTML;
-//  	$par2_text = <<<HTML
-//  	Utilizziamo materiali di primarie case produttrici, in grado di garantire 
-//  			qualit&agrave; e sicurezza mantenendo conformit� con le aspettative del cliente.
-// HTML;
-//  	$par3_text = <<<HTML
-//  	Siamo specializzati in:
-// HTML;
 // 		fine variabili di testo-->
  	
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
@@ -44,24 +37,8 @@ HTML;
 	$col = $main_feature->ownerDocument->createElement ("div");
 	$col->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12");	
 	
-	//$paragraph = $col2->ownerDocument->createElement ("h4");
 	$par1 = $col->ownerDocument->createElement ("p", $par1_text);
 	$col->appendChild ($par1);
-// 	$par2 = $col->ownerDocument->createElement ("p", $par2_text);
-// 	$col->appendChild ($par2);
-// 	$par3 = $col->ownerDocument->createElement ("p", $par3_text);
-// 	$col->appendChild ($par3);
-	
-// 	$ul = $col->ownerDocument->createElement ("ul");
-// 	$ul->setAttribute ("class", "custom-bullet");
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Impianti elettrici civili ed industriali."));
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Cabine di trasformazione MT-BT."));
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Quadri elettrici di potenza, controllo e telegestione."));
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Quadri elettrici di potenza di tele commutazione e gruppi elettrogeni."));
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Impianti radiotelevisivi ed elettronici in genere e di antenne."));
-// 	$ul->appendChild ($ul->ownerDocument->createElement ("li", "Tecniche e metodologie di progettazione, installazione e verifica per impianti di cablaggio strutturato in categoria 5e e 6."));
-	
-// 	$col->appendChild ($ul);
 	$main_feature->appendChild ($col);
  	$row1->appendChild ($main_feature);
  	$container->appendChild ($row1);

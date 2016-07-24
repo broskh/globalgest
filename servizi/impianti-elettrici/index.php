@@ -45,7 +45,6 @@ HTML;
 	$col = $main_feature->ownerDocument->createElement ("div");
 	$col->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12");	
 	
-	//$paragraph = $col2->ownerDocument->createElement ("h4");
 	$par1 = $col->ownerDocument->createElement ("p", $par1_text);
 	$col->appendChild ($par1);
 	$par2 = $col->ownerDocument->createElement ("p", $par2_text);

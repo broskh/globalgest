@@ -12,12 +12,6 @@
 //  	<------------------------------------------------------>
 //		CONTENUTO DELLA PAGINA VERO E PROPRIO
  	
-//		<--variabili contenenti il testo da inserire nei paragrafi
- 	/*$par1_text = <<<HTML
- 	Questo &egrave; l'elenco delle nostre gallerie fotografiche nella quali mostriamo alcuni dei lavori dai noi svolti.
-HTML;*/
-// 		fine variabili di testo-->
- 	
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina
  	$gallery = $body->ownerDocument->createElement ("section");
  	$gallery->setAttribute ("id", "gallery");
@@ -25,11 +19,6 @@ HTML;*/
  	
  	$container = $gallery->ownerDocument->createElement ("div");
  	$container->setAttribute ("class", "container");
- 	
-// 		creo nodo per sottotitolo
- 	/*$subtitle = $container->ownerDocument->createElement ("h4");
- 	$par1 = $subtitle->ownerDocument->createElement ("p", $par1_text);
- 	$subtitle->appendChild ($par1);*/
  	
 //  	aggiungo titolo
  	addContentTitle($container, ["GALLERY ", $business_name], "");	//per aggiungere sottotitolo, mettere come terzo parametro $subtitle (e' necessario crearlo prima)

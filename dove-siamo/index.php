@@ -53,10 +53,7 @@ HTML;
 	$iframe = $col2->ownerDocument->createElement ("iframe");
 	$iframe->setAttribute ("src", "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJa11EzmPdf0cR3IMdKGTQaTI&key=AIzaSyA4S7CEnQ7FxbTwvGKfPB__ShvHDNHzj_E&zoom=12");
 	$iframe->setAttribute ("class", "map");
-// 	$iframe->setAttribute ("width", "900");
-// 	$iframe->setAttribute ("height", "500");
 	$iframe->setAttribute ("frameborder", "0");
-// 	$iframe->setAttribute ("style", "border:0");
 	$iframe->setAttribute ("allowfullscreen", "");
 	
 	$col2->appendChild ($iframe);
