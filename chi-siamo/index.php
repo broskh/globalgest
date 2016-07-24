@@ -75,7 +75,7 @@ HTML;
 	$col_ge->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
 	
 	$col2 = $col_ge->ownerDocument->createElement ("div");
-	$col2->setAttribute ("class", "col-md-3 col-xs-12 col-sm-3 child-vertical-align");
+	$col2->setAttribute ("class", "col-md-5 col-xs-12 col-sm-5 child-vertical-align");
 
 	$image_ge = $col2->ownerDocument->createElement ("img");
 	$image_ge->setAttribute ("src", dir_img . "/ge.jpg");
@@ -85,7 +85,7 @@ HTML;
 	$col_ge->appendChild ($col2);
 
 	$col3 = $col_ge->ownerDocument->createElement ("div");
-	$col3->setAttribute ("class", "col-md-9 col-xs-12 col-sm-9 child-vertical-align");
+	$col3->setAttribute ("class", "col-md-7 col-xs-12 col-sm-7 child-vertical-align");
 	
 	$par3 = $col3->ownerDocument->createElement ("p", $par3_text);
 	
@@ -98,7 +98,7 @@ HTML;
 	$col_tes->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
 	
 	$col4 = $col_tes->ownerDocument->createElement ("div");
-	$col4->setAttribute ("class", "col-md-3 col-md-push-9 col-xs-12 col-sm-3 col-sm-push-9 child-vertical-align");
+	$col4->setAttribute ("class", "col-md-5 col-md-push-7 col-xs-12 col-sm-5 col-sm-push-7 child-vertical-align");
 	
 	$image_tes = $col4->ownerDocument->createElement ("img");
 	$image_tes->setAttribute ("src", dir_img . "/tes.jpg");
@@ -108,7 +108,7 @@ HTML;
 	$col_tes->appendChild ($col4);
 	
 	$col5 = $col_tes->ownerDocument->createElement ("div");
-	$col5->setAttribute ("class", "col-md-9 col-md-pull-3 col-xs-12 col-sm-9 col-sm-pull-3 child-vertical-align");
+	$col5->setAttribute ("class", "col-md-7 col-md-pull-5 col-xs-12 col-sm-7 col-sm-pull-5 child-vertical-align");
 	
 	$par4 = $col5->ownerDocument->createElement ("p", $par4_text);
 	$col5->appendChild ($par4);
@@ -142,7 +142,7 @@ HTML;
  	$par9_text = <<<HTML
  	Progettazione e realizzazione di impianti elettrici, meccanici, di protezione da scariche 
  		atmosferiche, antincendio e di trasmissione dati. Costruzione di edifici civili e industriali. 
- 		Certificazione del sistema di Qualità ISO 9001 DNV. Ente di accreditamento ACCREDIA.
+ 		Certificazione del sistema di Qualit&agrave; ISO 9001 DNV. Ente di accreditamento ACCREDIA.
 HTML;
  	$par10_text = <<<HTML
  	Azienda qualificata all'esecuzione di lavori pubblici:
@@ -177,7 +177,7 @@ HTML;
  	$col_dnv->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
  	
  	$col8 = $col_dnv->ownerDocument->createElement ("div");
- 	$col8->setAttribute ("class", "col-md-3 col-xs-12 col-sm-3 child-vertical-align");
+ 	$col8->setAttribute ("class", "col-md-5 col-xs-12 col-sm-5 child-vertical-align");
  	
  	$image_dnv = $col8->ownerDocument->createElement ("img");
  	$image_dnv->setAttribute ("src", dir_img . "/iso9001.png");
@@ -187,7 +187,7 @@ HTML;
  	$col_dnv->appendChild ($col8);
  	
  	$col9 = $col_dnv->ownerDocument->createElement ("div");
- 	$col9->setAttribute ("class", "col-md-9 col-xs-12 col-sm-9 child-vertical-align");
+ 	$col9->setAttribute ("class", "col-md-7 col-xs-12 col-sm-7 child-vertical-align");
  	
  	$par8 = $col9->ownerDocument->createElement ("p", $par8_text);
  	$col9->appendChild ($par8);
@@ -202,7 +202,7 @@ HTML;
  	$col_bentley->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
  	
  	$col10 = $col_bentley->ownerDocument->createElement ("div");
- 	$col10->setAttribute ("class", "col-md-3 col-md-push-9 col-xs-12 col-sm-3 col-sm-push-9 child-vertical-align");
+ 	$col10->setAttribute ("class", "col-md-5 col-md-push-7 col-xs-12 col-sm-5 col-sm-push-7 child-vertical-align");
  	
  	$image_bentley = $col10->ownerDocument->createElement ("img");
  	$image_bentley->setAttribute ("src", dir_img . "/bentley.gif");
@@ -212,7 +212,7 @@ HTML;
  	$col_bentley->appendChild ($col10);
  	
  	$col11 = $col_bentley->ownerDocument->createElement ("div");
- 	$col11->setAttribute ("class", "col-md-9 col-md-pull-3 col-xs-12 col-sm-9 col-sm-pull-3 child-vertical-align");
+ 	$col11->setAttribute ("class", "col-md-7 col-md-pull-5 col-xs-12 col-sm-7 col-sm-pull-5 child-vertical-align");
  	
  	$par10 = $col11->ownerDocument->createElement ("p", $par10_text);
  	$col11->appendChild ($par10);

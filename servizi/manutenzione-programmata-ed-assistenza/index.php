@@ -13,13 +13,6 @@
  	Il nostro staff tecnico &egrave; in grado di svolgere lavori di manutenzione 
  			programmata e assistenza post impianti di vario genere.
 HTML;
-//  	$par2_text = <<<HTML
-//  	Utilizziamo materiali di primarie case produttrici, in grado di garantire 
-//  			qualit&agrave; e sicurezza mantenendo conformit� con le aspettative del cliente.
-// HTML;
-//  	$par3_text = <<<HTML
-//  	Siamo specializzati in:
-// HTML;
 // 		fine variabili di testo-->
  	
 //  	<--inizio della creazione della struttura del contenuto specifico della pagina

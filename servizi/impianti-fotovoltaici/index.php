@@ -162,7 +162,7 @@ HTML;
  	$col_section1->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
  	
  	$col3 = $col_section1->ownerDocument->createElement ("div");
- 	$col3->setAttribute ("class", "col-md-3 col-xs-12 col-sm-3 child-vertical-align");
+ 	$col3->setAttribute ("class", "col-md-5 col-xs-12 col-sm-5 child-vertical-align");
  	
  	$image1 = $col3->ownerDocument->createElement ("img");
  	$image1->setAttribute ("src", dir_img . "/FTV_cleaning/lavapannelli1.jpg");
@@ -172,7 +172,7 @@ HTML;
  	$col_section1->appendChild ($col3);
  	
  	$col4 = $col_section1->ownerDocument->createElement ("div");
- 	$col4->setAttribute ("class", "col-md-9 col-xs-12 col-sm-9 child-vertical-align");
+ 	$col4->setAttribute ("class", "col-md-7 col-xs-12 col-sm-7 child-vertical-align");
 
  	$col4->appendChild ($col4->ownerDocument->createElement ("p", $par8_text));
  	$col4->appendChild ($col4->ownerDocument->createElement ("p", $par9_text));
@@ -185,7 +185,7 @@ HTML;
  	$col_section2->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
  	
  	$col5 = $col_section2->ownerDocument->createElement ("div");
- 	$col5->setAttribute ("class", "col-md-3 col-md-push-9 col-xs-12 col-sm-3 col-sm-push-9 child-vertical-align");
+ 	$col5->setAttribute ("class", "col-md-5 col-md-push-7 col-xs-12 col-sm-5 col-sm-push-7 child-vertical-align");
  	
  	$image2 = $col5->ownerDocument->createElement ("img");
  	$image2->setAttribute ("src", dir_img . "/FTV_cleaning/lavapannelli2.jpg");
@@ -195,7 +195,7 @@ HTML;
  	$col_section2->appendChild ($col5);
  	
  	$col6 = $col_section2->ownerDocument->createElement ("div");
- 	$col6->setAttribute ("class", "col-md-9 col-md-pull-3 col-xs-12 col-sm-9 col-sm-pull-3 child-vertical-align");
+ 	$col6->setAttribute ("class", "col-md-7 col-md-pull-5 col-xs-12 col-sm-7 col-sm-pull-5 child-vertical-align");
 
  	$col6->appendChild ($col6->ownerDocument->createElement ("p", $par11_text));
  	$list = $col6->ownerDocument->createElement ("ul");
@@ -214,7 +214,7 @@ HTML;
  	$col_section3->setAttribute ("class", "col-md-12 col-xs-12 col-sm-12 father-vertical-align");
  	
  	$col7 = $col_section3->ownerDocument->createElement ("div");
- 	$col7->setAttribute ("class", "col-md-3 col-xs-12 col-sm-3 child-vertical-align");
+ 	$col7->setAttribute ("class", "col-md-5 col-xs-12 col-sm-5 child-vertical-align");
  	
  	$image3 = $col7->ownerDocument->createElement ("img");
  	$image3->setAttribute ("src", dir_img . "/FTV_cleaning/lavapannelli3.jpg");
@@ -224,7 +224,7 @@ HTML;
  	$col_section3->appendChild ($col7);
  	
  	$col8 = $col_section3->ownerDocument->createElement ("div");
- 	$col8->setAttribute ("class", "col-md-9 col-xs-12 col-sm-9 child-vertical-align");
+ 	$col8->setAttribute ("class", "col-md-7 col-xs-12 col-sm-7 child-vertical-align");
  	
  	$col8->appendChild ($col8->ownerDocument->createElement ("p", $par12_text));
  	$col8->appendChild ($col8->ownerDocument->createElement ("p", $par13_text));

@@ -17,7 +17,7 @@
 HTML;
  	$par2_text = <<<HTML
  	Utilizziamo materiali di primarie case produttrici, in grado di garantire 
- 			qualit&agrave; e sicurezza mantenendo conformit� con le aspettative del cliente.
+ 			qualit&agrave; e sicurezza mantenendo conformit&agrave; con le aspettative del cliente.
 HTML;
 //  	$par3_text = <<<HTML
 //  	Siamo specializzati in:

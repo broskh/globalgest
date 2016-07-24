@@ -309,7 +309,7 @@
 	function addThumbnailImageForSlideshow (&$father, $a_id, $src)
 	{
 		$li = $father->ownerDocument->createElement ("li");
-		$li->setAttribute ("class", "col-sm-3");
+		$li->setAttribute ("class", "col-xs-6 col-sm-4");
 		
 		$a = $li->ownerDocument->createElement ("a");
 		$a->setAttribute ("class", "thumbnail");
@@ -1016,10 +1016,29 @@
 		
 		$bottom_row = $bottom_container->ownerDocument->createElement ("div");
 		$bottom_row->setAttribute ("class", "row");
+
+		//SECONDA SEZIONE
+		$second_bot_col = $bottom_row->ownerDocument->createElement ("div");
+		$second_bot_col->setAttribute ("class", "col-md-6 col-sm-6  col-sm-push-6 col-xs-12");
+		
+		$privacy_policy_div = $second_bot_col->ownerDocument->createElement ("div");
+		$privacy_policy_div->setAttribute ("class", "footer_mid pull-right");
+		
+		$privacy_policy_p = $privacy_policy_div->ownerDocument->createElement ("p");
+		
+		$privacy_policy_a = $privacy_policy_p->ownerDocument->createElement ("a", "Privacy Policy");
+		$privacy_policy_a->setAttribute ("href", dir_prj_root . "/privacy-policy.php");
+		$privacy_policy_a->setAttribute ("class", "privacy-policy-link");
+		$privacy_policy_a->setAttribute ("target", "_blank");
+		
+		$privacy_policy_p->appendChild ($privacy_policy_a);
+		$privacy_policy_div->appendChild ($privacy_policy_p);
+		$second_bot_col->appendChild ($privacy_policy_div);
+		$bottom_row->appendChild ($second_bot_col);
 		
 		//PRIMA SEZIONE
 		$first_bot_col = $bottom_row->ownerDocument->createElement ("div");
-		$first_bot_col->setAttribute ("class", "col-md-6 col-sm-6 col-xs-12");
+		$first_bot_col->setAttribute ("class", "col-md-6 col-sm-6 col-sm-pull-6 col-xs-12");
 		
 		$copyright_div = $first_bot_col->ownerDocument->createElement ("div");
 		$copyright_div->setAttribute ("class", "footer_bottom");
@@ -1038,24 +1057,6 @@
 		$first_bot_col->appendChild ($copyright_div);
 		$bottom_row->appendChild ($first_bot_col);
 		
-// 			metto link per privacy policy
-		$second_bot_col = $bottom_row->ownerDocument->createElement ("div");
-		$second_bot_col->setAttribute ("class", "col-md-6 col-sm-6 col-xs-12");
-		
-		$privacy_policy_div = $second_bot_col->ownerDocument->createElement ("div");
-		$privacy_policy_div->setAttribute ("class", "footer_mid pull-right");
-		
-		$privacy_policy_p = $privacy_policy_div->ownerDocument->createElement ("p");
-		
-		$privacy_policy_a = $privacy_policy_p->ownerDocument->createElement ("a", "Privacy Policy");
-		$privacy_policy_a->setAttribute ("href", dir_prj_root . "/privacy-policy.php");
-		$privacy_policy_a->setAttribute ("class", "privacy-policy-link");
-		$privacy_policy_a->setAttribute ("target", "_blank");
-		
-		$privacy_policy_p->appendChild ($privacy_policy_a);
-		$privacy_policy_div->appendChild ($privacy_policy_p);
-		$second_bot_col->appendChild ($privacy_policy_div);
-		$bottom_row->appendChild ($second_bot_col);
 		
 		//BOTTONI SOCIAL (DA SOSTITUIRE AL LINK DEL PRIVACY POLICY)
 		/*$second_bot_col = $bottom_row->ownerDocument->createElement ("div");

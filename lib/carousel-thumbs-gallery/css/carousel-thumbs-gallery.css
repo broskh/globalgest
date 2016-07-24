@@ -14,7 +14,7 @@
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
     /*width: 100%;*/
     width: auto;
-    min-height: 390px;
+    /*min-height: 390px;*/
     max-height: 390px;
     margin: auto;
 }
@@ -27,6 +27,7 @@
 .carousel-control.right
 {
 	background-image: linear-gradient(to left,rgba(0,0,0,.8) 0,rgba(0,0,0,.01) 100%)!important;
+	right: 15px!important;
 }
 
 .carousel-control.left
@@ -87,4 +88,19 @@
 #slider
 {
 	min-height: 480px;
+}
+
+.thumbnail
+{
+	width: 115px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+	.carousel-inner, .carousel-inner img
+	{
+		max-height: 290px;
+	}
 }
