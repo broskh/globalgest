@@ -148,7 +148,7 @@ HTML;
  	Azienda qualificata all'esecuzione di lavori pubblici:
 HTML;
  	$par11_text = <<<HTML
- 	Categorie OG1 - OG11 - OS30
+ 	Categorie OG 1 - OG 9 - OG 11 - OS 30
 HTML;
  	
  	$certifications = $about_us->ownerDocument->createElement ("div");
