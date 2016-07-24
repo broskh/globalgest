@@ -1,6 +1,65 @@
 <?php
 	include_once 'lib/functions.php';	//Includo la mia libreria PHP
 	$dom = open_html("Home");	//genero il dom
+	$head = $dom->getElementsByTagName("head")->item(0);	//salvo il riferimento al nodo head
+	
+// 		aggiungo uno sript che consente la creazione del rich snippet a google
+	$script_json = <<<JSON
+	{
+	  "@context": "http://schema.org",
+	  "@type": "HomeAndConstructionBusiness",
+	  "image": "http://www.globalgest.mo.it/img/header.jpg",
+	  "@id": "http://www.globalgest.mo.it",
+	  "name": "Global Gest s.r.l.",
+	  "address": {
+	    "@type": "PostalAddress",
+	    "streetAddress": "Via della Meccanica, 16/18",
+	    "addressLocality": "San Cesario sul Panaro",
+	    "addressRegion": "MO",
+	    "postalCode": "41058",
+	    "addressCountry": "IT"
+	  },
+	  "geo": {
+	    "@type": "GeoCoordinates",
+	    "latitude": 44.5894206,
+	    "longitude": 11.0279188
+	  },
+	  "url": "http://www.globalgest.mo.it",
+	  "telephone": "+390599537400",
+	  "logo": "http://www.globalgest.mo.it/img/logo.png",
+	  "openingHoursSpecification": [
+	    {
+	      "@type": "OpeningHoursSpecification",
+	      "dayOfWeek": [
+	        "Monday",
+	        "Tuesday",
+	        "Wednesday",
+	        "Thursday",
+	        "Friday"
+	      ],
+	      "opens": "8:30",
+	      "closes": "12:30"
+	    },
+	    {
+	      "@type": "OpeningHoursSpecification",
+	      "dayOfWeek": [
+	        "Monday",
+	        "Tuesday",
+	        "Wednesday",
+	        "Thursday",
+	        "Friday"
+	      ],
+	      "opens": "14:30",
+	      "closes": "18:30"
+	    }
+	  ]
+	}
+JSON;
+	$script_for_snippet = $head->ownerDocument->createElement ("script", $script_json);
+	$script_for_snippet->setAttribute ("type", "application/ld+json");
+	$head->appendChild ($script_for_snippet);
+// 		fine script per snippet
+	
  	$body = $dom->getElementsByTagName("body")->item(0);	//salvo il riferimento al nodo body
  	
  	addHorizontalNavbar($body);	//aggiungo la barra di navigazione
