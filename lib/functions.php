@@ -783,7 +783,7 @@
 		
 		//PRIMO MENU
 		$first_col = $top_row->ownerDocument->createElement ("div");
-		$first_col->setAttribute ("class", "col-md-3 col-sm-6 col-xs-12");
+		$first_col->setAttribute ("class", "col-md-4 col-sm-6 col-xs-12");
 		
 		$first_h3Menu = $first_col->ownerDocument->createElement ("h3", "Menu Principale");
 		$first_h3Menu->setAttribute ("class", "menu_head");
@@ -807,7 +807,7 @@
 		
 		//SECONDO MENU
 		$second_col = $top_row->ownerDocument->createElement ("div");
-		$second_col->setAttribute ("class", "col-md-3 col-sm-6 col-xs-12");
+		$second_col->setAttribute ("class", "col-md-4 col-sm-6 col-xs-12");
 		
 		$second_h3Menu = $second_col->ownerDocument->createElement ("h3", "Servizi");
 		$second_h3Menu->setAttribute ("class", "menu_head");
@@ -833,7 +833,7 @@
 		$second_col->appendChild ($second_footerMenu);
 		$top_row->appendChild ($second_col);
 		
-		//TERZO MENU
+		/*//EX TERZO MENU
 		$third_col = $top_row->ownerDocument->createElement ("div");
 		$third_col->setAttribute ("class", "col-md-3 col-sm-6 col-xs-12");
 		
@@ -851,11 +851,11 @@
 		
 		$third_footerMenu->appendChild ($third_ul);
 		$third_col->appendChild ($third_footerMenu);
-		$top_row->appendChild ($third_col);
+		$top_row->appendChild ($third_col);*/
 		
 		//QUARTO MENU
 		$fourth_col = $top_row->ownerDocument->createElement ("div");
-		$fourth_col->setAttribute ("class", "col-md-3 col-sm-6 col-xs-12");
+		$fourth_col->setAttribute ("class", "col-md-4 col-sm-6 col-xs-12");
 		
 		$fourth_h3Menu = $fourth_col->ownerDocument->createElement ("h3", "Contatto");
 		$fourth_h3Menu->setAttribute ("class", "menu_head");
