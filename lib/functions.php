@@ -2,6 +2,7 @@
 	define ( "dir_prj_root", "/globalgest" ); //costante che contiene il percorso root
 	define ( "dir_img", dir_prj_root . "/img" ); //costante che contiene il percorso alla cartella "img"
 	define ( "dir_lib", dir_prj_root . "/lib" ); //costante che contiene il percorso alla cartella "lib"
+	define ( "dir_home", dir_prj_root . "/"); //costante che contiene il percorso alla pagina "home"
 	define ( "dir_chi_siamo", dir_prj_root . "/chi-siamo" ); //costante che contiene il percorso alla cartella "chi-siamo"
 	define ( "dir_servizi", dir_prj_root . "/servizi" ); //costante che contiene il percorso alla cartella "servizi"
 	define ( "dir_progettazione", dir_servizi . "/progettazione" ); //costante che contiene il percorso alla cartella "progettazione
@@ -416,7 +417,7 @@
 		
 		$navbar_brand = $navbar_header->ownerDocument->createElement ("a");
 		$navbar_brand->setAttribute ("class", "navbar-brand");
-		$navbar_brand->setAttribute ("href", dir_prj_root);
+		$navbar_brand->setAttribute ("href", dir_home);
 		
 		$logo = $navbar_brand->ownerDocument->createElement ("img");
 		$logo->setAttribute ("src", dir_img . "/logo.png");
@@ -434,7 +435,7 @@
 		$ul = $navbar->ownerDocument->createElement ("ul");
 		$ul->setAttribute ("class", "nav navbar-nav navbar-right");
 
-		addMenuVoice($ul, "Home", dir_prj_root);
+		addMenuVoice($ul, "Home", dir_home);
 		addMenuVoice($ul, "Chi Siamo", dir_chi_siamo);
 		addMenuVoiceWithSubmenu($ul, "Servizi", dir_servizi, "dropdown-services", $voci_servizi);
 		addMenuVoice($ul, "Gallery", dir_gallery);
@@ -793,7 +794,7 @@
 		
 		$first_ul = $first_footerMenu->ownerDocument->createElement ("ul");
 
-		addSimpleLi($first_ul, "Home", dir_prj_root, "", "");
+		addSimpleLi($first_ul, "Home", dir_home, "", "");
 		addSimpleLi($first_ul, "Chi siamo", dir_chi_siamo, "", "");
 		addSimpleLi($first_ul, "Servizi", dir_servizi, "", "");
 		addSimpleLi($first_ul, "Gallery", dir_gallery, "", "");
@@ -808,7 +809,7 @@
 		$second_col = $top_row->ownerDocument->createElement ("div");
 		$second_col->setAttribute ("class", "col-md-3 col-sm-6 col-xs-12");
 		
-		$second_h3Menu = $second_col->ownerDocument->createElement ("h3", "Serizi");
+		$second_h3Menu = $second_col->ownerDocument->createElement ("h3", "Servizi");
 		$second_h3Menu->setAttribute ("class", "menu_head");
 		$second_col->appendChild ($second_h3Menu);
 		
@@ -945,7 +946,7 @@
 		$privacy_policy_p = $privacy_policy_div->ownerDocument->createElement ("p");
 		
 		$privacy_policy_a = $privacy_policy_p->ownerDocument->createElement ("a", "Privacy Policy");
-		$privacy_policy_a->setAttribute ("href", dir_prj_root . "/privacy-policy.php");
+		$privacy_policy_a->setAttribute ("href", "https://www.iubenda.com/privacy-policy/7897740");
 		$privacy_policy_a->setAttribute ("class", "privacy-policy-link");
 		$privacy_policy_a->setAttribute ("target", "_blank");
 		
