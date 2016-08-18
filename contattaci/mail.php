@@ -8,10 +8,9 @@
 	$to = email;
 	$subject = "MAIL FROM WEBSITE www.globalgest.mo.it";
 	$message = wordwrap($message,70);
-	$headers = "From: $email" . "\r\n" .
-			"Telephone: $telephone" . "\r\n";
+	$headers = "From: $email" . "\r\n" . "Telephone: $telephone" . "\r\n";
 	
-	$xml = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"utf-8\" ?><xml></xml}>");
+	$xml = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"utf-8\" ?><xml></xml>");
 	if (mail($to,$subject,$message,$headers))
 	{
 		$xml->addChild("error", "false");
@@ -20,4 +19,5 @@
 	{
 		$xml->addChild("error", "true");
 	}
+	echo $xml->asXML ();
 ?>

@@ -46,10 +46,10 @@ $('#contact_form').on('submit', function (e) {
 		            dialog.setMessage('Mail inviata correttamente.');
 		        	dialog.open ();
 		        	
-		        	jQuery("#name").val("");
-		        	jQuery("#email").val("");
-		        	jQuery("#phone").val("");
-		        	jQuery("#message").val("");
+		        	jQuery("#name").val("").addClass("whiteBackgroundAfterAutocomplete");
+		        	jQuery("#email").val("").addClass("whiteBackgroundAfterAutocomplete");
+		        	jQuery("#phone").val("").addClass("whiteBackgroundAfterAutocomplete");
+		        	jQuery("#message").val("").addClass("whiteBackgroundAfterAutocomplete");
 		        }
 		    },
 		    error: function ()
@@ -61,4 +61,5 @@ $('#contact_form').on('submit', function (e) {
 		    } 
 		});
 	}
+	return false;
 });

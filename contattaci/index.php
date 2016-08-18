@@ -50,7 +50,7 @@ HTML;
 	
 	$form = $contact_full->ownerDocument->createElement ("form");
 	$form->setAttribute ("id", "contact_form");
-	$form->setAttribute ("onsubmit", "return false;");
+	//$form->setAttribute ("onsubmit", "return false;");
 	
 	$col2 = $form->ownerDocument->createElement ("div");
 	$col2->setAttribute ("class", "col-md-6 left");
