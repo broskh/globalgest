@@ -30,9 +30,10 @@
 	define ( "tel", "+39 059 9537400" ); //telefono sede
 	define ( "fax", "+39 059 9537496" ); //fax sede
 	define ( "email", "info@globalgest.mo.it" ); //indirizzo mail per info
-	define ( "giorni_lavorativi", "Dal lunedì al venerdì" );
-	define ( "orari_mattina", "8.30 - 12.30" );
-	define ( "orari_pomeriggio", "14.30 - 18.30" );
+	define ( "giorni_lavorativi", "Dal lunedì al venerdì" ); //giorni lavorativi
+	define ( "orari_mattina", "8.30 - 12.30" ); //orario mattutino
+	define ( "orari_pomeriggio", "14.30 - 18.30" ); //orario pomeridiano
+	define ( "pIva", "P. Iva: 02635350362" ); //partita iva
 	
 	/*
 	 * Funzione che aggiunge al nodo padre passato per parametro un semplice nodo a con class e href passati per parametro.
@@ -897,6 +898,8 @@
 		$a_time->appendChild($a_time->ownerDocument->createTextNode(orari_pomeriggio));
 		$li_time->appendChild ($a_time);
 		$fourth_ul->appendChild ($li_time);
+
+		addSimpleLi($fourth_ul, pIva, "", "footer-link", "fa fa-certificate");
 		
 		$fourth_footerMenu->appendChild ($fourth_ul);
 		$fourth_col->appendChild ($fourth_footerMenu);
