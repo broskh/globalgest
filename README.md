@@ -1,7 +1,7 @@
 # Globalgest
 Website for company.
 <br>
-There is a complete menu to surf the web site
+There is a complete menu to browse the website.
 ![Globalgest - Home](https://i.imgur.com/1atIyUK.png)
 
 ## Description
